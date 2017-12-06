@@ -1,0 +1,8 @@
+MODULE_FOLDER=.\\source\\VBM.BCO\\AutomationBuild
+ASSEMBLYINFO=.\\source\\VBM.BCO\\SharedAssemblyInfo.cs
+SOLUTION_FILE=.\\source\\VBM.BCO\\VBM_BCO.sln 
+AIP_FILE_NAME=Blister_Check_Outs
+AICMD=C:\\Program Files (x86)\\Caphyon\\Advanced Installer 12.8\\bin\\x86\\AdvancedInstaller.com
+OUTPUT_FOLDER=\\\\192.168.2.4\\Public\\BCO\\Installers
+APP_FILE_EXE=VBM.BCO.exe
+IS_ADD=0
