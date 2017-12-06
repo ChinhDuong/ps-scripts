@@ -8,12 +8,14 @@ param(
 	$aipFolder,
 	[parameter (Mandatory=$true)] 
 	[ValidateNotNullOrEmpty()]
-	$bcoFolder,
+	$appFolder,
+	
 	$moduleFolder=$env:MODULE_FOLDER ,	
 	$aipFileName=$env:AIP_FILE_NAME ,
-	$aicmd=$env:AICMD ,	
+	$aicmd=$env:AICMD,	
 	$OutputFolder=$env:OUTPUT_FOLDER ,		
-	$isAdd=$env:IS_ADD
+	$isAdd=$env:IS_ADD,
+	$appFileExe=$env:APP_FILE_EXE
 
 
 )
@@ -50,6 +52,9 @@ function CopyToFolder{
 
 	Write-Host "bcoInstallerFolder:"
 	Write-Host ($bcoInstallerFolder)
+
+	Write-Host "appFileExe:"
+	Write-Host ($appFileExe)
 		
 	$file = Get-Item $aipFileNew
 	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles"
@@ -61,7 +66,7 @@ function CopyToFolder{
 }
 Write-Host "isAdd:"
 Write-Host ($isAdd)
-$bcoFile = "$($bcoFolder)\VBM.BCO.exe"
+$bcoFile = "$($appFolder)\$($appFileExe)"
 
 ImportModules $moduleFolder
 $IsFileExist = Test-Path $bcoFile
@@ -70,7 +75,7 @@ If ($IsFileExist -eq $true ){
 	$aipFileNew = CreateAipWithNewVersion $version $aipFolder $aipFileName $bcoFile	
 
 	if ($isAdd -eq 1) {
-		AddFileAndFolderToAip $aicmd $bcoFolder $aipFileNew
+		AddFileAndFolderToAip $aicmd $appFolder $aipFileNew
 	}else{
 		Write-Host "---------AddFileAndFolderToAip is ignored----------------------------------- "
 	}
