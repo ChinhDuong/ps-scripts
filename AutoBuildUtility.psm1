@@ -360,7 +360,7 @@ function SetVersion{
     if(![string]::IsNullOrEmpty($currentVersionText)){
         $currentVersion = [version]$currentVersionText
         $newVersion = [version][string]::Format("{0}.{1}.{2}.{3}",$currentVersion.Major
-            ,$currentVersion.Minor,$currentVersion.Build,$currentVersion.Revision+1)
+            ,$currentVersion.Minor,$currentVersion.Build,$currentVersion.Revision+20)
         
         (Get-Content $filePath) | 
         Foreach-Object {$_ -replace $currentVersionText,$newVersion.ToString()}  | 
