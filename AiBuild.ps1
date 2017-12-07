@@ -59,6 +59,7 @@ function CopyToFolder{
 		
 	$file = Get-Item $aipFileNew
 	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles"
+	Write-Host "Copy $dir_path to $bcoInstallerFolder"
 	Copy-Item "$dir_path\*" -Destination $bcoInstallerFolder 
 	
 	Write-Host "---------End CopyToFolder----------------------------------- "
