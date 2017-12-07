@@ -6,3 +6,4 @@ AICMD=C:\\Program Files (x86)\\Caphyon\\Advanced Installer 12.8\\bin\\x86\\Advan
 OUTPUT_FOLDER=\\\\192.168.2.4\\Public\\BCO\\Installers
 APP_FILE_EXE=VBM.BCO.exe
 IS_ADD=0
+IS_COPY=0

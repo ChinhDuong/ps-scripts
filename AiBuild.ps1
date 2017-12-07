@@ -15,7 +15,8 @@ param(
 	$aicmd=$env:AICMD,	
 	$OutputFolder=$env:OUTPUT_FOLDER ,		
 	$isAdd=$env:IS_ADD,
-	$appFileExe=$env:APP_FILE_EXE
+	$appFileExe=$env:APP_FILE_EXE,
+	$isCopy=$env:IS_COPY
 
 
 )
@@ -82,5 +83,10 @@ If ($IsFileExist -eq $true ){
 	
 	SetVersionAndBuildAip $aicmd $aipFileNew $version
 	
-	CopyToFolder $moduleFolder $aipFileNew $OutputFolder 
+	if ($isCopy -eq 1) {
+		CopyToFolder $moduleFolder $aipFileNew $OutputFolder 
+	}else{
+		Write-Host "---------CopyToFolder is ignored----------------------------------- " 
+	}
+	
 }
