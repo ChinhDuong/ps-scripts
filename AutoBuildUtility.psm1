@@ -493,7 +493,7 @@ function AddFileAndFolderToAip{
 		[parameter (Mandatory=$true)] 
 		[ValidateNotNullOrEmpty()]
 		$apiFilePath,
-		$folderExclude = @("NonObfuscatedAssemblyBackup","Confused"),
+		$folderExclude = @("NonObfuscatedAssemblyBackup","Confused","Release","Debug"),
 		$fileExclude =  @("*.pdb","bco_log")
 	)
 
