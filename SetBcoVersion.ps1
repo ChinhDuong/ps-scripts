@@ -21,5 +21,9 @@ Write-Host (Get-Location)
 Write-Host "moduleFolder:"
 Write-Host $moduleFolder
 ImportModules $moduleFolder
-
-SetVersion $fileVersion
+try {
+	SetVersion $fileVersion
+}
+catch {
+	exit 1
+}
