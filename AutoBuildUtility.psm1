@@ -474,9 +474,14 @@ function SetVersionAndBuildAip{
 	$buildCmd = "$($aicmd) /build $($aipFile) "
 
 	& $aicmd /edit $aipFile /SetVersion $version -noprodcode
-	if ($? -eq $false) exit 1
+	if ($? -eq $false) {
+		exit 1
+	}
 	& $aicmd /build $aipFile 
-	if ($? -eq $false) exit 1
+	if ($? -eq $false) 
+	{
+		exit 1
+	}
 	Write-Host "---------End SetVersionAndBuildAip----------------------------------- "
 
 }
