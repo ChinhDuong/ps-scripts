@@ -517,7 +517,8 @@ function AddFileAndFolderToAip{
 	Write-Host "apiFilePath:"
 	Write-Host ($apiFilePath)
 
-	$directories = Get-ChildItem -Path $appFolder -Directory -Exclude $folderExclude
+	$directories = Get-ChildItem -Path $appFolder -Directory | Where-Object {$folderExclude -notcontains $_.Name }
+	#$directories = Get-ChildItem -Path $appFolder -Directory -Exclude $folderExclude
 	$files = Get-ChildItem -Path "$($appFolder)\*" -File -Exclude $fileExclude
 	
 	Write-Host "Add files ....."
