@@ -73,21 +73,27 @@ $bcoFile = "$($appFolder)\$($appFileExe)"
 ImportModules $moduleFolder
 $IsFileExist = Test-Path $bcoFile
 If ($IsFileExist -eq $true ){
-	$version = (Get-Item $bcoFile).VersionInfo.FileVersion
-	$aipFileNew = CreateAipWithNewVersion $version $aipFolder $aipFileName $bcoFile	
+	try{
+		$version = (Get-Item $bcoFile).VersionInfo.FileVersion
+		$aipFileNew = CreateAipWithNewVersion $version $aipFolder $aipFileName $bcoFile	
 
-	if ($isAdd -eq 1) {
-		AddFileAndFolderToAip $aicmd $appFolder $aipFileNew
-	}else{
-		Write-Host "---------AddFileAndFolderToAip is ignored----------------------------------- "
+		if ($isAdd -eq 1) {
+			AddFileAndFolderToAip $aicmd $appFolder $aipFileNew
+		}else{
+			Write-Host "---------AddFileAndFolderToAip is ignored----------------------------------- "
+		}
+	
+		SetVersionAndBuildAip $aicmd $aipFileNew $version
+	
+		if ($isCopy -eq 1) {
+			CopyToFolder $moduleFolder $aipFileNew $OutputFolder 
+		}else{
+			Write-Host "---------CopyToFolder is ignored----------------------------------- " 
+		}
+	}
+	catch{
+		exit 1
 	}
 	
-	SetVersionAndBuildAip $aicmd $aipFileNew $version
-	
-	if ($isCopy -eq 1) {
-		CopyToFolder $moduleFolder $aipFileNew $OutputFolder 
-	}else{
-		Write-Host "---------CopyToFolder is ignored----------------------------------- " 
-	}
 	
 }
