@@ -538,32 +538,33 @@ function AddFileAndFolderToAip{
 	Write-Host "---------End AddFileAndFolderToAip----------------------------------- "
 }
 
-#function CopyToFolder{
-#	param(
-#		[parameter (Mandatory=$true)] 
-#		[ValidateNotNullOrEmpty()]
-#		$aipFileNew,		
-#		[parameter (Mandatory=$true)] 
-#		[ValidateNotNullOrEmpty()]
-#		$bcoInstallerFolder		
-#	)
-#	Write-Host "---------Begin CopyToFolder----------------------------------- "
-#	Write-Host "Current Directory:"
-#	Write-Host (Get-Location)
-	
-#	Write-Host "aipFileNew:"
-#	Write-Host ($aipFileNew)
+function DeployPackageRemotely{
+	param(
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$pscmd,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$remotePcName,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$userName,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$password,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$installationScript,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$filePackage
+	)
+	[string] $fileContent = Get-Content $installationScript
+	#get current version
+    [string] $oldFilePackage = [regex]::match($fileContent,'(?<=packgeName=).*\.(?:msi|exe)$').Groups[0].Value
+	(Get-Content $installationScript) | 
+        Foreach-Object {$_ -replace $oldFilePackage,$filePackage}  | 
+        Out-File $installationScript
 
-#	Write-Host "bcoInstallerFolder:"
-#	Write-Host ($bcoInstallerFolder)
-
-#	$file = Get-Item $aipFileNew
-#	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles\"
-#	$isExist = Test-Path $dir_path,$bcoInstallerFolder
-#	if($isExist[0] -eq $true -and $isExist[1] -eq $true){
-#		Copy-Item "$dir_path\*" -Recurse -Destination $bcoInstallerFolder
-#		#Copy-RemoteItemLocally 
-#	}
-#	Write-Host "---------End CopyToFolder----------------------------------- "
-#}
-#Export-ModuleMember -Function Get-ExecutableType
+	&$pscmd $remotePcName -u $userName -p $password -c $installationScript C:\Temp\install.bat
+}
