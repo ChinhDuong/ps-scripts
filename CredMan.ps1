@@ -940,6 +940,7 @@ Found credentials as:
   Comment   : $($Cred.Comment)
 "@
 		Write-Host $CredStr
+		return $Cred
 	}
 #endregion
 

@@ -538,7 +538,7 @@ function AddFileAndFolderToAip{
 	Write-Host "---------End AddFileAndFolderToAip----------------------------------- "
 }
 
-function DeployPackageRemotely{
+function DeployBuild{
 	param(
 		[parameter (Mandatory=$true)] 
 		[ValidateNotNullOrEmpty()]
@@ -554,7 +554,7 @@ function DeployPackageRemotely{
 		$password,
 		[parameter (Mandatory=$true)] 
 		[ValidateNotNullOrEmpty()]
-		$installationScript,
+		$deployScript,
 		[parameter (Mandatory=$true)] 
 		[ValidateNotNullOrEmpty()]
 		$filePackage
@@ -562,9 +562,9 @@ function DeployPackageRemotely{
 	[string] $fileContent = Get-Content $installationScript
 	#get current version
     [string] $oldFilePackage = [regex]::match($fileContent,'(?<=packgeName=).*\.(?:msi|exe)$').Groups[0].Value
-	(Get-Content $installationScript) | 
+	(Get-Content $deployScript) | 
         Foreach-Object {$_ -replace $oldFilePackage,$filePackage}  | 
-        Out-File $installationScript
+        Out-File $deployScript
 
-	&$pscmd $remotePcName -u $userName -p $password -c $installationScript C:\Temp\install.bat
+	&$pscmd $remotePcName -u $userName -p $password -c $deployScript C:\Temp\install.bat
 }

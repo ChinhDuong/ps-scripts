@@ -17,8 +17,6 @@ param(
 	$isAdd=$env:IS_ADD,
 	$appFileExe=$env:APP_FILE_EXE,
 	$isCopy=$env:IS_COPY
-
-
 )
 
 function ImportModules {
@@ -90,6 +88,11 @@ If ($IsFileExist -eq $true ){
 		}else{
 			Write-Host "---------CopyToFolder is ignored----------------------------------- " 
 		}
+		$file = Get-Item $aipFileNew
+		$filePackageName = "($file.BaseName).exe"
+		$string = "FILE_PACKAGE=$bcoInstallerFolder\\$filePackageName`n"
+		$string| Out-File "deploy.env"
+
 	}
 	catch{
 		exit 1
