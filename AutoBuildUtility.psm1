@@ -559,6 +559,25 @@ function DeployBuild{
 		[ValidateNotNullOrEmpty()]
 		$filePackage
 	)
+	Write-Host "---------Begin DeployBuild----------------------------------- "
+	Write-Host "Current Directory:"
+	Write-Host (Get-Location)
+	
+	Write-Host "pscmd:"
+	Write-Host ($pscmd)
+
+	Write-Host "remotePcName:"
+	Write-Host ($remotePcName)
+
+	Write-Host "userName:"
+	Write-Host ($userName)
+
+	Write-Host "deployScript:"
+	Write-Host ($deployScript)
+
+	Write-Host "filePackage:"
+	Write-Host ($filePackage)
+
 	[string] $fileContent = Get-Content $installationScript
 	#get current version
     [string] $oldFilePackage = [regex]::match($fileContent,'(?<=packgeName=).*\.(?:msi|exe)$').Groups[0].Value
@@ -567,4 +586,6 @@ function DeployBuild{
         Out-File $deployScript
 
 	&$pscmd $remotePcName -u $userName -p $password -c $deployScript C:\Temp\install.bat
+
+	Write-Host "---------End DeployBuild----------------------------------- "
 }
