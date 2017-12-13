@@ -92,7 +92,7 @@ If ($IsFileExist -eq $true ){
 		$filePackageName = "$($file.BaseName).exe"
 		# add back slash 
 		
-		$string = "FILE_PACKAGE=$($OutputFolder.Replace("\\","\\\\"))\\$filePackageName`n"
+		$string = "FILE_PACKAGE=$($OutputFolder.Replace("\","\\"))\\$filePackageName`n"
 		$string| Out-File "deploy.env"
 
 	}
