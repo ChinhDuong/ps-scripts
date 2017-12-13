@@ -90,6 +90,8 @@ If ($IsFileExist -eq $true ){
 		}
 		$file = Get-Item $aipFileNew
 		$filePackageName = "$($file.BaseName).exe"
+		# add back slash 
+		$filePackageName.Replace("\\","\\\\");
 		$string = "FILE_PACKAGE=$OutputFolder\\$filePackageName`n"
 		$string| Out-File "deploy.env"
 
