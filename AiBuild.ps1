@@ -89,8 +89,8 @@ If ($IsFileExist -eq $true ){
 			Write-Host "---------CopyToFolder is ignored----------------------------------- " 
 		}
 		$file = Get-Item $aipFileNew
-		$filePackageName = "($file.BaseName).exe"
-		$string = "FILE_PACKAGE=$bcoInstallerFolder\\$filePackageName`n"
+		$filePackageName = "$($file.BaseName).exe"
+		$string = "FILE_PACKAGE=$OutputFolder\\$filePackageName`n"
 		$string| Out-File "deploy.env"
 
 	}
