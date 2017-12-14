@@ -576,8 +576,8 @@ function DeployBuild {
 
   Write-Host "filePackage:"
   Write-Host ($filePackage)
-
-  ReplaceTextInFile $deployScript $deployScript '(?<=FILE_PACKAGE=)[A-Za-z0-9\._]*\.(?:msi|exe)' $filePackage
+  $pattern = '(?<=FILE_PACKAGE=)[A-Za-z0-9\\\._]*\.(?:msi|exe)'
+  ReplaceTextInFile $deployScript $deployScript $pattern $filePackage
 
   & $pscmd $remotePcName -u $userName -p $password -c $deployScript C:\Temp\install.bat
 

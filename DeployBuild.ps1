@@ -26,5 +26,9 @@ Write-Host ($remotePcName)
 
 $cred = CredMan -GetCred $remotePcName
 $filePackage = $env:FILE_PACKAGE
-
-DeployBuild $pscmd $remotePcName $cred.UserName $cred.CredentialBlob $deployScript $filePackage
+if([string]::IsNullOrEmpty($filePackage) -and $env:IS_COPY -eq 1){
+	DeployBuild $pscmd $remotePcName $cred.UserName $cred.CredentialBlob $deployScript $filePackage
+}
+else{
+	Write-Host "Not deploy package on $remotePcName"
+}

@@ -59,9 +59,11 @@ function CopyToFolder{
 	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles"
 	Write-Host "Copy $dir_path to $bcoInstallerFolder"
 	Copy-Item "$dir_path\*" -Destination $bcoInstallerFolder 
-	
-	Write-Host "---------End CopyToFolder----------------------------------- "
+	$fileInstaller = Get-ChildItem $dir_path
+	$fileName = $fileInstaller.Name
 
+	Write-Host "---------End CopyToFolder----------------------------------- "
+	return $fileName
 	
 }
 Write-Host "isAdd:"
