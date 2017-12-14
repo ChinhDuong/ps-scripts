@@ -587,6 +587,19 @@ function ReplaceTextInFile {
   param(
     $filePath,$outPut,$pattern
   )
+  Write-Host "---------Begin ReplaceTextInFile----------------------------------- "
+  Write-Host "Current Directory:"
+  Write-Host (Get-Location)
+
+  Write-Host "filePath:"
+  Write-Host ($filePath)
+
+  Write-Host "outPut:"
+  Write-Host ($outPut)
+
+  Write-Host "pattern:"
+  Write-Host ($pattern)
+
   [string]$fileContent = Get-Content $filePath
   #get current version
   [string]$oldFilePackage = [regex]::match($fileContent,$pattern).Groups[0].Value
