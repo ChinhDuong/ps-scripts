@@ -22,7 +22,7 @@ Write-Host "moduleFolder:"
 Write-Host $moduleFolder
 ImportModules $moduleFolder
 try {
-	SetVersion $fileVersion
+	Set-Version $fileVersion
 }
 catch {
 	exit 1
