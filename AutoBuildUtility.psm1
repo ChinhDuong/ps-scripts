@@ -28,12 +28,7 @@
    # Copy a remote directory
    Copy-RemoteItemLocally "\\otherpc\sharedfolder\subfolder" "C:\Mydocs\" (Get-Credential) -Directory
 #>
-Export-ModuleMember -Functions 'CredMan'
-Export-ModuleMember -Functions 'SetVersion'
-Export-ModuleMember -Functions 'SetVersionAndBuildAip'
-Export-ModuleMember -Functions 'CreateAipWithNewVersion'
-Export-ModuleMember -Functions 'DeployBuild'
-Export-ModuleMember -Functions 'AddFileAndFolderToAip'
+
 
 function Format-AnsiColor {
   [CmdletBinding()]
@@ -1439,4 +1434,9 @@ namespace PsUtils
   #endregion
   CredManMain
 }
-
+#Export-ModuleMember -Function C
+#Export-ModuleMember -Functions 'SetVersion'
+#Export-ModuleMember -Functions 'SetVersionAndBuildAip'
+#Export-ModuleMember -Functions 'CreateAipWithNewVersion'
+#Export-ModuleMember -Functions 'DeployBuild'
+#Export-ModuleMember -Functions 'AddFileAndFolderToAip'
