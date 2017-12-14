@@ -966,7 +966,7 @@ function Write-Creds
 #endregion
 
 #region Cmd-Line functionality
-function CredManMain
+function Invoke-Cred
 {
   #region Adding credentials
   if ($AddCred)
@@ -1462,7 +1462,7 @@ namespace PsUtils
     Add-Type $PsCredmanUtils
   }
   #endregion
-  CredManMain
+  Invoke-Cred
 }
 
 function Send-Build{
