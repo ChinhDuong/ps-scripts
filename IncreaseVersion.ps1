@@ -13,7 +13,7 @@ function ImportModules {
 		$moduleFolder = ".\"
 	)
 	$module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
-	Import-Module $module -Force
+	Import-Module $module -Force -Verbose
 }
 Write-Host "Current Directory"
 Write-Host (Get-Location)
