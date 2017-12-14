@@ -324,7 +324,7 @@ function Get-ExecutableType
 
 }
 
-function RemoveReadOnlyInFile {
+function Remove-ReadOnlyInFile {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -338,7 +338,7 @@ function RemoveReadOnlyInFile {
   }
 }
 
-function SetVersion {
+function Set-Version {
   [CmdletBinding()]
   param(
     [string]$filePath
@@ -350,7 +350,7 @@ function SetVersion {
   Write-Host "filePath:"
   Write-Host ($filePath)
 
-  RemoveReadOnlyInFile $filePath
+  Remove-ReadOnlyInFile $filePath
   [string]$fileContent = Get-Content $filePath
   #get current version
   [string]$currentVersionText = [regex]::match($fileContent,'(?<=\[assembly: AssemblyVersion\(")\d+\.\d+\.\d+\.\d+(?="\))').Groups[0].Value
@@ -369,7 +369,7 @@ function SetVersion {
   Write-Host "---------End SetVersion----------------------------------- "
 }
 
-function RemoveItemIfExist {
+function Remove-ItemIfExist {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -381,7 +381,7 @@ function RemoveItemIfExist {
   }
 }
 
-function CreateAipWithNewVersion {
+function New-AipWithNewVersion {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -435,7 +435,7 @@ function CreateAipWithNewVersion {
 
       }
       if (![string]::IsNullOrEmpty($aipFileNew)) {
-        RemoveItemIfExist $aipFileNew
+        Remove-ItemIfExist $aipFileNew
         Copy-Item $aipFile $aipFileNew -Force
       }
     }
@@ -444,7 +444,7 @@ function CreateAipWithNewVersion {
   }
 }
 
-function SetVersionAndBuildAip {
+function Set-VersionAndBuildAip {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -485,7 +485,7 @@ function SetVersionAndBuildAip {
 
 }
 
-function AddFileAndFolderToAip {
+function Add-FileAndFolderToAip {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -537,7 +537,7 @@ function AddFileAndFolderToAip {
   Write-Host "---------End AddFileAndFolderToAip----------------------------------- "
 }
 
-function DeployBuild {
+function Install-Build {
   param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
@@ -583,7 +583,8 @@ function DeployBuild {
 
   Write-Host "---------End DeployBuild----------------------------------- "
 }
-function ReplaceTextInFile {
+
+function Replace-TextInFile {
   param(
     $filePath,$outPut,$pattern,$newValue
   )
@@ -1106,7 +1107,7 @@ Type      : $($Cred.Type)
   #endregion
 }
 #endregion
-function CredMan {
+function Select-Cred {
 
   param
   (
@@ -1463,7 +1464,47 @@ namespace PsUtils
   #endregion
   CredManMain
 }
-#Export-ModuleMember -Function C
+
+function Send-Build{
+	param(
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$moduleFolder,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$aipFileNew,
+		[parameter (Mandatory=$true)] 
+		[ValidateNotNullOrEmpty()]
+		$bcoInstallerFolder
+	)
+	Write-Host "---------Begin CopyToFolder----------------------------------- "
+	Write-Host "Current Directory:"
+	Write-Host (Get-Location)
+	
+	Write-Host "moduleFolder:"
+	Write-Host ($moduleFolder)
+
+	Write-Host "aipFileNew:"
+	Write-Host ($aipFileNew)
+
+	Write-Host "bcoInstallerFolder:"
+	Write-Host ($bcoInstallerFolder)
+
+	Write-Host "appFileExe:"
+	Write-Host ($appFileExe)
+		
+	$file = Get-Item $aipFileNew
+	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles"
+	Write-Host "Copy $dir_path to $bcoInstallerFolder"
+	Copy-Item "$dir_path\*" -Destination $bcoInstallerFolder 
+	$fileInstaller = Get-ChildItem $dir_path
+	$fileName = $fileInstaller.Name
+
+	Write-Host "---------End CopyToFolder----------------------------------- "
+	return $fileName
+	
+}
+
 #Export-ModuleMember -Functions 'SetVersion'
 #Export-ModuleMember -Functions 'SetVersionAndBuildAip'
 #Export-ModuleMember -Functions 'CreateAipWithNewVersion'
