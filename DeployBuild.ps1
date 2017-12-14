@@ -19,6 +19,8 @@ function ImportModules {
 	$module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
 	Import-Module $module -Force
 }
+Write-Host "remotePcName:"
+Write-Host ($remotePcName)
 
 $cred = .\CredMan.ps1 -GetCred $remotePcName
 $filePackage = $env:FILE_PACKAGE
