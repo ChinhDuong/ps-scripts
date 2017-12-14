@@ -577,7 +577,7 @@ function DeployBuild {
   Write-Host "filePackage:"
   Write-Host ($filePackage)
 
-  [string]$fileContent = Get-Content $installationScript
+  [string]$fileContent = Get-Content $deployScript
   #get current version
   [string]$oldFilePackage = [regex]::match($fileContent,'(?<=packgeName=).*\.(?:msi|exe)$').Groups[0].Value
   (Get-Content $deployScript) |
