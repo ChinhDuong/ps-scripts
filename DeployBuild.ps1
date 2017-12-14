@@ -23,6 +23,6 @@ Write-Host "remotePcName:"
 Write-Host ($remotePcName)
 
 $cred = .\CredMan.ps1 -GetCred $remotePcName
-$filePackage = $env:FILE_PACKAGE
-ImportModules $moduleFolder
-DeployBuild $pscmd $remotePcName $cred.UserName $cred.CredentialBlob $deployScript $filePackage
+#$filePackage = $env:FILE_PACKAGE
+#ImportModules $moduleFolder
+#DeployBuild $pscmd $remotePcName $cred.UserName $cred.CredentialBlob $deployScript $filePackage
