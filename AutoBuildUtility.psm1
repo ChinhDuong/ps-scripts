@@ -601,6 +601,9 @@ function ReplaceTextInFile {
   Write-Host ($pattern)
 
   [string]$fileContent = Get-Content $filePath
+  Write-Host "fileContent:"
+  Write-Host ($fileContent)
+
   #get current version
   [string]$oldFilePackage = [regex]::match($fileContent,$pattern).Groups[0].Value
   (Get-Content $filePath) |
