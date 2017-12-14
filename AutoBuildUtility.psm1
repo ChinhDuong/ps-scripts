@@ -577,16 +577,22 @@ function DeployBuild {
   Write-Host "filePackage:"
   Write-Host ($filePackage)
 
-  [string]$fileContent = Get-Content $deployScript
-  #get current version
-  [string]$oldFilePackage = [regex]::match($fileContent,'(?<=FILE_PACKAGE=).*\.(?:msi|exe)$').Groups[0].Value
-  (Get-Content $deployScript) |
-  ForEach-Object { $_ -replace $oldFilePackage,$filePackage } |
-  Out-File $deployScript
+  ReplaceTextInFile $deployScript,$deployScript,'(?<=FILE_PACKAGE=).*\.(?:msi|exe)'
 
   & $pscmd $remotePcName -u $userName -p $password -c $deployScript C:\Temp\install.bat
 
   Write-Host "---------End DeployBuild----------------------------------- "
+}
+function ReplaceTextInFile {
+  param(
+    $filePath,$outPut,$pattern
+  )
+  [string]$fileContent = Get-Content $filePath
+  #get current version
+  [string]$oldFilePackage = [regex]::match($fileContent,$pattern).Groups[0].Value
+  (Get-Content $filePath) |
+  ForEach-Object { $_ -replace $oldFilePackage,$filePackage } |
+  Out-File $outPut
 }
 
 #region Internal Tools
