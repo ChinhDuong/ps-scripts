@@ -585,7 +585,7 @@ function DeployBuild {
 }
 function ReplaceTextInFile {
   param(
-    $filePath,$outPut,$pattern
+    $filePath,$outPut,$pattern,$newValue
   )
   Write-Host "---------Begin ReplaceTextInFile----------------------------------- "
   Write-Host "Current Directory:"
@@ -604,7 +604,7 @@ function ReplaceTextInFile {
   #get current version
   [string]$oldFilePackage = [regex]::match($fileContent,$pattern).Groups[0].Value
   (Get-Content $filePath) |
-  ForEach-Object { $_ -replace $oldFilePackage,$filePackage } |
+  ForEach-Object { $_ -replace $oldFilePackage,$newValue } |
   Out-File $outPut
 }
 
