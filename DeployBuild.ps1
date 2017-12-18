@@ -24,7 +24,7 @@ ImportModules $moduleFolder
 Write-Host "remotePcName:"
 Write-Host ($remotePcName)
 
-$cred = CredMan -GetCred $remotePcName
+$cred = Select-Cred -GetCred $remotePcName
 $filePackage = $env:FILE_PACKAGE
 if([string]::IsNullOrEmpty($filePackage) -and $env:IS_COPY -eq 1){
 	Install-Build $pscmd $remotePcName $cred.UserName $cred.CredentialBlob $deployScript $filePackage
