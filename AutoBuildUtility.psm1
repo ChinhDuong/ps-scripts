@@ -577,16 +577,16 @@ function Install-Build {
   Write-Host "filePackage:"
   Write-Host ($filePackage)
   $pattern = '(?<=FILE_PACKAGE=)[A-Za-z0-9\\\._]*\.(?:msi|exe)'
-  ReplaceTextInFile $deployScript $deployScript $pattern $filePackage
+  Replace-TextInFile $deployScript $deployScript $pattern $filePackage
 
-  & $pscmd $remotePcName -u $userName -p $password -c $deployScript C:\Temp\install.bat
+  & $pscmd \\$remotePcName -u $userName -p $password -c $deployScript
 
   Write-Host "---------End DeployBuild----------------------------------- "
 }
 
 function Replace-TextInFile {
   param(
-    $filePath,$outPut,$pattern,$newValue
+    $filePath,$output,$pattern,$newValue
   )
   Write-Host "---------Begin ReplaceTextInFile----------------------------------- "
   Write-Host "Current Directory:"
@@ -595,27 +595,35 @@ function Replace-TextInFile {
   Write-Host "filePath:"
   Write-Host ($filePath)
 
-  Write-Host "outPut:"
-  Write-Host ($outPut)
+  Write-Host "output:"
+  Write-Host ($output)
 
   Write-Host "pattern:"
   Write-Host ($pattern)
+  
+  Write-Host "newValue:"
+  Write-Host ($newValue)
 
   [string]$fileContent = Get-Content $filePath
   Write-Host "fileContent:"
   Write-Host ($fileContent)
+  if(!([string]::IsNullOrEmpty($fileContent))){
+   
+	  $match = [regex]::match($fileContent,$pattern)
 
-  #get current version
-  $match = [regex]::match($fileContent,$pattern)
-
-  Write-Host "match:"
-  Write-Host ($match)
-  if ($match -ne $null) {
-    $oldValue = $match.Groups[0].Value
-    (Get-Content $filePath) |
-    ForEach-Object { $_ -replace $oldValue,$newValue } |
-    Out-File $outPut
+	  Write-Host "match:"
+	  Write-Host ($match)
+	  if ($match -ne $null) {
+		$oldValue = $match.Groups[0].Value
+		Write-Host "oldValue:"
+		Write-Host ($oldValue)
+		#(Get-Content $filePath) |
+		#ForEach-Object { $_ -replace $oldValue,$newValue } |
+		#Out-File $outPut
+		( Get-Content $filePath ).Replace($oldValue,$newValue) | Out-File $output -Encoding ASCII  -Force
+	  }
   }
+ 
 
 }
 
