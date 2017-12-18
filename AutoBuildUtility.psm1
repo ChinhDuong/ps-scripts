@@ -1455,7 +1455,7 @@ namespace PsUtils
   catch
   {
     #only remove the error we generate
-    $Error.RemoveAt($Error.Count - 1)
+    #$Error.RemoveAt($Error.Count - 1)
   }
   if ($null -eq $PsCredMan)
   {
