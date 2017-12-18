@@ -51,7 +51,7 @@ If ($IsFileExist -eq $true ){
 			$fileName = Send-Build $moduleFolder $aipFileNew $OutputFolder 			
 		
 			$string = "FILE_PACKAGE=$($OutputFolder.Replace("\","\\"))\\$fileName`n"
-			$string| Out-File "deploy.env" -Encoding utf8
+			$string| Out-File "deploy.env.properties" -Encoding ASCII
 		}else{
 			Write-Host "---------CopyToFolder is ignored----------------------------------- " 
 		}
