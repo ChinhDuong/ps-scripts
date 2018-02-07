@@ -434,10 +434,10 @@ function New-AipWithNewVersion {
         $aipFileNew = "$($aipFolder)\$($aipFileName)_$($version)_x64.aip"
 
       }
-      $newFileName = $[System.IO.Path]::GetFileName($aipFileNew)
-	  $oldFileName = $[System.IO.Path]::GetFileName($aipFile)
-	  Write-Host "aipFileNew:"
-      Write-Host ($aipFileNew)	  
+      $newFileName = [System.IO.Path]::GetFileName($aipFileNew)
+	  $oldFileName = [System.IO.Path]::GetFileName($aipFile)
+	  Write-Host "newFileName:"
+      Write-Host ($newFileName)	  
 	  
 	  Write-Host "oldFileName:"
       Write-Host ($oldFileName)
