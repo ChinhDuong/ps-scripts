@@ -435,7 +435,7 @@ function New-AipWithNewVersion {
 
       }
       if (![string]::IsNullOrEmpty($aipFileNew)
-			&& $aipFileNew -ne $aipFile) {
+			-and $aipFileNew -ne $aipFile) {
         Remove-ItemIfExist $aipFileNew
         Copy-Item $aipFile $aipFileNew -Force
       }
