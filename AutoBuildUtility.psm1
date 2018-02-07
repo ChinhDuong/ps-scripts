@@ -434,7 +434,8 @@ function New-AipWithNewVersion {
         $aipFileNew = "$($aipFolder)\$($aipFileName)_$($version)_x64.aip"
 
       }
-      if (![string]::IsNullOrEmpty($aipFileNew)) {
+      if (![string]::IsNullOrEmpty($aipFileNew)
+			&& $aipFileNew != $aipFile) {
         Remove-ItemIfExist $aipFileNew
         Copy-Item $aipFile $aipFileNew -Force
       }
