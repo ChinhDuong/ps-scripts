@@ -353,7 +353,7 @@ function Set-Version {
   Remove-ReadOnlyInFile $filePath
   [string]$fileContent = Get-Content $filePath
   #get current version
-  [string]$currentVersionText = [regex]::match($fileContent,'(?<=\[assembly: AssemblyVersion\(")\d+\.\d+\.\d+\.\d+(?="\))').Groups[0].Value
+  [string]$currentVersionText = [regex]::match($fileContent,'(?<=\[assembly: AssemblyVersion\(")\d+\.\d+\.\d+\.?\d*(?="\))').Groups[0].Value
   Write-Host "Curent Version $($currentVersionText)"
 
   if (![string]::IsNullOrEmpty($currentVersionText)) {
