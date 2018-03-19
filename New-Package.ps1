@@ -3,8 +3,7 @@
 # AiBuild.ps1
 #
 
-function New-Package () {
-	
+function New-Package () {	
     param(		
         [parameter (Mandatory = $true)] 
         [ValidateNotNullOrEmpty()]
@@ -55,7 +54,6 @@ function New-Package () {
         catch {
             exit 1
         }
-	
 	
     }
 

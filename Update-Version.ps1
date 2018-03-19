@@ -2,6 +2,7 @@
 # SetBcoVersion.ps1
 # Set version for bco build
 #
+. .\Common.ps1
 function Update-Version{
 	param(	
 	$moduleFolder=$env:MODULE_FOLDER ,
