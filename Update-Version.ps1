@@ -2,7 +2,7 @@
 # SetBcoVersion.ps1
 # Set version for bco build
 #
-. .\Common.ps1
+
 function Update-Version{
 	param(	
 	$moduleFolder=$env:MODULE_FOLDER ,
@@ -16,7 +16,7 @@ function Update-Version{
 
 	$module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
 	Import-Module $module -Force -Verbose
-	
+
 	try {
 		Set-Version $fileVersion
 	}
