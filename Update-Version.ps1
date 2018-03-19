@@ -13,7 +13,10 @@ function Update-Version{
 
 	Write-Host "moduleFolder:"
 	Write-Host $moduleFolder
-	Import-Modules $moduleFolder
+
+	$module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
+	Import-Module $module -Force -Verbose
+	
 	try {
 		Set-Version $fileVersion
 	}

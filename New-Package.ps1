@@ -21,11 +21,14 @@ function New-Package () {
         $isCopy = $env:IS_COPY
     )
 
-    Write-Host "isAdd:"
-    Write-Host ($isAdd)
+    Write-Host "isAdd: $isAdd"
+    Write-Host "moduleFolder: $moduleFolder"
+    
     $bcoFile = "$($appFolder)\$($appFileExe)"
 
-    Import-Modules $moduleFolder
+    $module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
+    Import-Module $module -Force -Verbose
+    
     $IsFileExist = Test-Path $bcoFile
     If ($IsFileExist -eq $true ) {
         try {

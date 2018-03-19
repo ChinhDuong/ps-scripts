@@ -13,10 +13,11 @@ function Publish-Package {
 	
 	)
 	
-    Import-Modules $moduleFolder
-
-    Write-Host "remotePcName:"
-    Write-Host ($remotePcName)
+    $module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
+    Import-Module $module -Force -Verbose
+    
+    Write-Host "remotePcName: $remotePcName"
+    
     $cred = Select-Cred -GetCred $remotePcName
     $filePackage = $env:FILE_PACKAGE
     if (!([string]::IsNullOrEmpty($filePackage)) -and $env:IS_COPY -eq 1) {
