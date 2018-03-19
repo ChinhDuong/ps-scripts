@@ -2,7 +2,7 @@
 # SetBcoVersion.ps1
 # Set version for bco build
 #
-function Increase-Version{
+function Update-Version{
 	param(	
 	$moduleFolder=$env:MODULE_FOLDER ,
 	$fileVersion=$env:ASSEMBLYINFO
@@ -12,7 +12,7 @@ function Increase-Version{
 
 	Write-Host "moduleFolder:"
 	Write-Host $moduleFolder
-	ImportModules $moduleFolder
+	Import-Modules $moduleFolder
 	try {
 		Set-Version $fileVersion
 	}
@@ -21,10 +21,3 @@ function Increase-Version{
 	}
 }
 
-function ImportModules {
-	param(
-		$moduleFolder = ".\"
-	)
-	$module = Join-Path -Path $moduleFolder -ChildPath "AutoBuildUtility.psm1"
-	Import-Module $module -Force -Verbose
-}
