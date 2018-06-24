@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="12.8" version="14.7" Modules="professional" RootPath="." Language="en" Id="{ADBC14BC-C689-4EA6-8C8A-8085A0C92473}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="DigCertStoreComponent;SerValComponent;MsiExtComponent;MsiAssemblyComponent;MsiServInstComponent;ActSyncAppComponent;MsiThemeComponent;BackgroundImagesComponent;DictionaryComponent;CPLAppletComponent;MsiClassComponent;WebApplicationsComponent;MsiOdbcDataSrcComponent;MsiAppSearchComponent;MsiInstExSeqComponent;AppXAppDetailsComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.5.1" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.5.1" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="[|ProductName] x64." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="bcoicon_1.exe" Type="8"/>
+    <ROW Property="Manufacturer" Value="Global Factories"/>
+    <ROW Property="ProductCode" Value="1033:{1BFFF153-B537-4E95-BD92-B366E42F2083} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Blister Check Out"/>
+    <ROW Property="ProductVersion" Value="1.7.3.1" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{10F99181-A980-45AE-A55E-01CED48969AC}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:32-bit Windows versions" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
+    <ROW Directory="BlisterCheckOut_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="BLISTE~1|Blister Check Out"/>
+    <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="Images_Dir" Directory_Parent="APPDIR" DefaultDir="Images" DirectoryOptions="3"/>
+    <ROW Directory="Libs_Dir" Directory_Parent="APPDIR" DefaultDir="Libs" DirectoryOptions="3"/>
+    <ROW Directory="LocalAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="LOCALA~1|LocalAppDataFolder" IsPseudoRoot="1" DirectoryOptions="3"/>
+    <ROW Directory="Reports_Dir" Directory_Parent="APPDIR" DefaultDir="Reports" DirectoryOptions="3"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="ar_Dir" Directory_Parent="APPDIR" DefaultDir="ar" DirectoryOptions="3"/>
+    <ROW Directory="cs_Dir" Directory_Parent="APPDIR" DefaultDir="cs" DirectoryOptions="3"/>
+    <ROW Directory="da_Dir" Directory_Parent="APPDIR" DefaultDir="da" DirectoryOptions="3"/>
+    <ROW Directory="deDE_Dir" Directory_Parent="APPDIR" DefaultDir="de-DE" DirectoryOptions="3"/>
+    <ROW Directory="de_Dir" Directory_Parent="APPDIR" DefaultDir="de" DirectoryOptions="3"/>
+    <ROW Directory="el_Dir" Directory_Parent="APPDIR" DefaultDir="el" DirectoryOptions="3"/>
+    <ROW Directory="en_Dir" Directory_Parent="APPDIR" DefaultDir="en" DirectoryOptions="3"/>
+    <ROW Directory="es_Dir" Directory_Parent="APPDIR" DefaultDir="es" DirectoryOptions="3"/>
+    <ROW Directory="fi_Dir" Directory_Parent="APPDIR" DefaultDir="fi" DirectoryOptions="3"/>
+    <ROW Directory="frCA_Dir" Directory_Parent="APPDIR" DefaultDir="fr-CA" DirectoryOptions="3"/>
+    <ROW Directory="frFR_Dir" Directory_Parent="APPDIR" DefaultDir="fr-FR" DirectoryOptions="3"/>
+    <ROW Directory="fr_Dir" Directory_Parent="APPDIR" DefaultDir="fr" DirectoryOptions="3"/>
+    <ROW Directory="he_Dir" Directory_Parent="APPDIR" DefaultDir="he" DirectoryOptions="3"/>
+    <ROW Directory="it_Dir" Directory_Parent="APPDIR" DefaultDir="it" DirectoryOptions="3"/>
+    <ROW Directory="ja_Dir" Directory_Parent="APPDIR" DefaultDir="ja" DirectoryOptions="3"/>
+    <ROW Directory="ko_Dir" Directory_Parent="APPDIR" DefaultDir="ko" DirectoryOptions="3"/>
+    <ROW Directory="languages_Dir" Directory_Parent="APPDIR" DefaultDir="LANGUA~1|languages" DirectoryOptions="3"/>
+    <ROW Directory="modules_Dir" Directory_Parent="APPDIR" DefaultDir="modules" DirectoryOptions="3"/>
+    <ROW Directory="nl_Dir" Directory_Parent="APPDIR" DefaultDir="nl" DirectoryOptions="3"/>
+    <ROW Directory="no_Dir" Directory_Parent="APPDIR" DefaultDir="no" DirectoryOptions="3"/>
+    <ROW Directory="pl_Dir" Directory_Parent="APPDIR" DefaultDir="pl" DirectoryOptions="3"/>
+    <ROW Directory="pt_Dir" Directory_Parent="APPDIR" DefaultDir="pt" DirectoryOptions="3"/>
+    <ROW Directory="ro_Dir" Directory_Parent="APPDIR" DefaultDir="ro" DirectoryOptions="3"/>
+    <ROW Directory="ru_Dir" Directory_Parent="APPDIR" DefaultDir="ru" DirectoryOptions="3"/>
+    <ROW Directory="sk_Dir" Directory_Parent="APPDIR" DefaultDir="sk" DirectoryOptions="3"/>
+    <ROW Directory="sv_Dir" Directory_Parent="APPDIR" DefaultDir="sv" DirectoryOptions="3"/>
+    <ROW Directory="tr_Dir" Directory_Parent="APPDIR" DefaultDir="tr" DirectoryOptions="3"/>
+    <ROW Directory="zhCHS_Dir" Directory_Parent="APPDIR" DefaultDir="zh-CHS" DirectoryOptions="3"/>
+    <ROW Directory="zhCHT_Dir" Directory_Parent="APPDIR" DefaultDir="zh-CHT" DirectoryOptions="3"/>
+    <ROW Directory="zhCN_Dir" Directory_Parent="APPDIR" DefaultDir="zh-CN" DirectoryOptions="3"/>
+    <ROW Directory="zhHans_Dir" Directory_Parent="APPDIR" DefaultDir="zh-Hans" DirectoryOptions="3"/>
+    <ROW Directory="zhHant_Dir" Directory_Parent="APPDIR" DefaultDir="zh-Hant" DirectoryOptions="3"/>
+    <ROW Directory="zhTW_Dir" Directory_Parent="APPDIR" DefaultDir="zh-TW" DirectoryOptions="3"/>
+    <ROW Directory="zh_Dir" Directory_Parent="APPDIR" DefaultDir="zh" DirectoryOptions="3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{215751C5-6B30-4F9A-A12A-308BDEB91C15}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
+    <ROW Component="AllSuportedLanguages.txt" ComponentId="{CFFEC54A-1C60-4D39-9736-6050444282E6}" Directory_="languages_Dir" Attributes="0" KeyPath="AllSuportedLanguages.txt" Type="0"/>
+    <ROW Component="AutoMapper.Net4.dll" ComponentId="{E2AFF885-C080-4170-A9E4-9CC9A343FE86}" Directory_="APPDIR" Attributes="0" KeyPath="AutoMapper.Net4.dll"/>
+    <ROW Component="AutoMapper.dll" ComponentId="{B6B5549E-6016-47B5-B26E-7397AC4FFE70}" Directory_="APPDIR" Attributes="0" KeyPath="AutoMapper.dll"/>
+    <ROW Component="BCO.DataReportModule.dll" ComponentId="{6B9100F5-3CD3-4C01-A857-26E25DBAA0AE}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.DataReportModule.dll"/>
+    <ROW Component="BCO.DataService.dll" ComponentId="{2F482969-14AE-4365-A367-4AEB183CDC46}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.DataService.dll"/>
+    <ROW Component="BCO.DataService.resources.dll" ComponentId="{1AF44F1A-1F52-4CD6-88FF-E940DE150B4C}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.DataService.resources.dll"/>
+    <ROW Component="BCO.DataService.resources.dll_1" ComponentId="{3DFECE99-BB29-4868-B5ED-9918D8EA32BF}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.DataService.resources.dll_1"/>
+    <ROW Component="BCO.DataService.resources.dll_2" ComponentId="{0C9FB6A2-6CE9-4549-95FE-D651AE17A3E5}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.DataService.resources.dll_2"/>
+    <ROW Component="BCO.DataService.resources.dll_3" ComponentId="{D8D89149-1BFF-48F3-A65C-F78186F97901}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.DataService.resources.dll_3"/>
+    <ROW Component="BCO.DetailModule.dll" ComponentId="{CB9E7C96-B76A-4081-BA73-30FEF758E1AA}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.DetailModule.dll"/>
+    <ROW Component="BCO.DetailModule.resources.dll" ComponentId="{FCA58FC0-0E40-4165-A167-4004F8E74F5B}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll"/>
+    <ROW Component="BCO.DetailModule.resources.dll_1" ComponentId="{4551B132-7D53-4064-8656-961E3B2E273B}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll_1"/>
+    <ROW Component="BCO.DetailModule.resources.dll_2" ComponentId="{F34D628E-9EDC-4486-A70B-F9CFB88C8F74}" Directory_="de_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll_2"/>
+    <ROW Component="BCO.DetailModule.resources.dll_3" ComponentId="{3CEB0406-8866-4882-8427-8CFB2EBCC5EA}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll_3"/>
+    <ROW Component="BCO.DetailModule.resources.dll_4" ComponentId="{C206A0D8-AAFC-42EC-9FBF-D82DC9956FB0}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll_4"/>
+    <ROW Component="BCO.DetailModule.resources.dll_5" ComponentId="{4D2579CA-B4A0-4EBB-A30E-4458F4B3A3D7}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.DetailModule.resources.dll_5"/>
+    <ROW Component="BCO.DsMulReportModule.dll" ComponentId="{5D2D7518-2ACC-4C09-9C72-4E392616653A}" Directory_="modules_Dir" Attributes="0" KeyPath="BCO.DsMulReportModule.dll"/>
+    <ROW Component="BCO.DsReport.dll" ComponentId="{4A9FBE43-2A55-4658-B5A4-F07B95B181F2}" Directory_="modules_Dir" Attributes="0" KeyPath="BCO.DsReport.dll"/>
+    <ROW Component="BCO.FooterModule.dll" ComponentId="{27B9E325-F374-490D-9605-3B651DFF8590}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.FooterModule.dll"/>
+    <ROW Component="BCO.FooterModule.resources.dll" ComponentId="{D601BEAA-9CF9-4326-AC13-63B086493BAD}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll"/>
+    <ROW Component="BCO.FooterModule.resources.dll_1" ComponentId="{1BA23588-381B-475C-91CF-B87E0AED0BBE}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll_1"/>
+    <ROW Component="BCO.FooterModule.resources.dll_2" ComponentId="{C68AEEAE-EDDB-467F-A672-8CB4BA09E974}" Directory_="de_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll_2"/>
+    <ROW Component="BCO.FooterModule.resources.dll_3" ComponentId="{F98A59D6-98DF-4523-AE95-464B5724400B}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll_3"/>
+    <ROW Component="BCO.FooterModule.resources.dll_4" ComponentId="{9DEDAF9A-4E1F-4868-92DC-5FECD49CD455}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll_4"/>
+    <ROW Component="BCO.FooterModule.resources.dll_5" ComponentId="{07ED1897-58FB-47EB-9DAD-768D5CA90432}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.FooterModule.resources.dll_5"/>
+    <ROW Component="BCO.HeaderModule.dll" ComponentId="{188ABDA3-4EA3-4ABE-AD79-CD8941AA389F}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.HeaderModule.dll"/>
+    <ROW Component="BCO.HeaderModule.resources.dll" ComponentId="{68B8487E-2A2C-404E-A9A2-6F00E71FEA00}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll"/>
+    <ROW Component="BCO.HeaderModule.resources.dll_1" ComponentId="{A35ECB1A-4B97-4C8D-8329-5297940F91DC}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll_1"/>
+    <ROW Component="BCO.HeaderModule.resources.dll_2" ComponentId="{EBE89DB1-B695-4193-A83F-186E51DD9E9E}" Directory_="de_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll_2"/>
+    <ROW Component="BCO.HeaderModule.resources.dll_3" ComponentId="{4E00536E-845C-44B3-823E-2E763B01857E}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll_3"/>
+    <ROW Component="BCO.HeaderModule.resources.dll_4" ComponentId="{9EA36A5C-766C-40BA-886C-E8A7BAA14E7C}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll_4"/>
+    <ROW Component="BCO.HeaderModule.resources.dll_5" ComponentId="{DB31B516-7CB7-4DDC-A687-CF0FBA414101}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.HeaderModule.resources.dll_5"/>
+    <ROW Component="BCO.ImageModule.dll" ComponentId="{C3C18E0D-98C8-4266-BED8-6ACCBC5FB63B}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.ImageModule.dll"/>
+    <ROW Component="BCO.ImageModule.resources.dll" ComponentId="{B78924FC-E7B8-49AC-AB55-444812F9A848}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll"/>
+    <ROW Component="BCO.ImageModule.resources.dll_1" ComponentId="{ACE3470E-2CC3-403E-858B-D0E673514589}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll_1"/>
+    <ROW Component="BCO.ImageModule.resources.dll_2" ComponentId="{DF7092B8-AFE6-4568-A5C4-1DCCB946E6F9}" Directory_="de_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll_2"/>
+    <ROW Component="BCO.ImageModule.resources.dll_3" ComponentId="{1B5D9419-9819-4539-847F-3CCAA2F26162}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll_3"/>
+    <ROW Component="BCO.ImageModule.resources.dll_4" ComponentId="{D9356C1D-3C96-425E-A562-1452D2A09326}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll_4"/>
+    <ROW Component="BCO.ImageModule.resources.dll_5" ComponentId="{4E87E2C4-D38E-4CE0-88F1-F15B62C03CCF}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.ImageModule.resources.dll_5"/>
+    <ROW Component="BCO.Infrastructure.dll" ComponentId="{D9BA4C48-35E9-44E9-9400-6643BF9E2E7B}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.Infrastructure.dll"/>
+    <ROW Component="BCO.LoginModule.dll" ComponentId="{79FF0E04-F9D6-4CDE-A0C2-3723C28CFF60}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.LoginModule.dll"/>
+    <ROW Component="BCO.LoginModule.resources.dll" ComponentId="{84B83815-EA96-4050-85A9-8958F51DFB80}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll"/>
+    <ROW Component="BCO.LoginModule.resources.dll_1" ComponentId="{4D2864B2-5EFC-43B8-B69A-03AFCB7302BC}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll_1"/>
+    <ROW Component="BCO.LoginModule.resources.dll_2" ComponentId="{24C6D692-407A-4DD2-A72F-E9200A4EED1A}" Directory_="de_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll_2"/>
+    <ROW Component="BCO.LoginModule.resources.dll_3" ComponentId="{A723370A-0C13-4E7F-B9BA-9BA6D1F0C128}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll_3"/>
+    <ROW Component="BCO.LoginModule.resources.dll_4" ComponentId="{8C55E8AE-BAFD-4CE7-B80D-C438C0E4C573}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll_4"/>
+    <ROW Component="BCO.LoginModule.resources.dll_5" ComponentId="{92DC495C-2BEB-4F93-A67E-FB347ADBDE24}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.LoginModule.resources.dll_5"/>
+    <ROW Component="BCO.McKessonReport.dll" ComponentId="{FFED4101-B9F2-48B8-A8C9-F898F4EB8222}" Directory_="modules_Dir" Attributes="0" KeyPath="BCO.McKessonReport.dll"/>
+    <ROW Component="BCO.PMCardReport.dll" ComponentId="{6889494B-AF66-417E-A2B1-B1054C8B387C}" Directory_="modules_Dir" Attributes="0" KeyPath="BCO.PMCardReport.dll"/>
+    <ROW Component="BCO.SelectionModule.dll" ComponentId="{457BBA81-EE7B-4DC1-9E00-16DAE4B5417E}" Directory_="APPDIR" Attributes="256" KeyPath="BCO.SelectionModule.dll"/>
+    <ROW Component="BCO.SelectionModule.resources.dll" ComponentId="{38AB241C-1EAB-4A3E-9C97-D210A6431EFE}" Directory_="frCA_Dir" Attributes="0" KeyPath="BCO.SelectionModule.resources.dll"/>
+    <ROW Component="BCO.SelectionModule.resources.dll_1" ComponentId="{8F3A3DF5-2F92-4B68-9B84-C4D05CC3E658}" Directory_="zhCN_Dir" Attributes="0" KeyPath="BCO.SelectionModule.resources.dll_1"/>
+    <ROW Component="BCO.SelectionModule.resources.dll_2" ComponentId="{67ABA841-4189-43F3-9271-C6D19D652EFC}" Directory_="frFR_Dir" Attributes="0" KeyPath="BCO.SelectionModule.resources.dll_2"/>
+    <ROW Component="BCO.SelectionModule.resources.dll_3" ComponentId="{F1C6DDA4-D738-42E7-8D29-C02994835CF8}" Directory_="nl_Dir" Attributes="0" KeyPath="BCO.SelectionModule.resources.dll_3"/>
+    <ROW Component="BCO.SelectionModule.resources.dll_4" ComponentId="{1F4AC92A-AD53-49BF-A925-12C3089F5652}" Directory_="zhTW_Dir" Attributes="0" KeyPath="BCO.SelectionModule.resources.dll_4"/>
+    <ROW Component="BCO.SureMedReport.dll" ComponentId="{FED056F9-7FEB-4660-A724-F072B36941D9}" Directory_="modules_Dir" Attributes="0" KeyPath="BCO.SureMedReport.dll"/>
+    <ROW Component="BlisterLable.xml" ComponentId="{A4C6A375-BB0F-4E8E-8DB0-401683ADE5DA}" Directory_="Reports_Dir" Attributes="0" KeyPath="BlisterLable.xml" Type="0"/>
+    <ROW Component="C1.WPF.4.dll" ComponentId="{8A34C7F8-A31E-44F1-A826-84C83D1391FC}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.4.dll"/>
+    <ROW Component="C1.WPF.C1Report.4.dll" ComponentId="{321FA144-F800-4BB6-B456-C0B9B2B316E9}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.C1Report.4.dll"/>
+    <ROW Component="C1.WPF.DateTimeEditors.4.dll" ComponentId="{45DBB5DB-2D21-4E0C-A222-D33D07058E3A}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.DateTimeEditors.4.dll"/>
+    <ROW Component="C1.WPF.Pdf.4.dll" ComponentId="{FE534B50-6BD2-43DF-BE0F-E578E7D939AB}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.Pdf.4.dll"/>
+    <ROW Component="C1.WPF.Schedule.4.dll" ComponentId="{5BDBBF09-618F-45B6-A873-48BDAEE68871}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.Schedule.4.dll"/>
+    <ROW Component="C1.WPF.Zip.4.dll" ComponentId="{43B1B963-14C0-49B8-9345-D2E8CF778639}" Directory_="APPDIR" Attributes="0" KeyPath="C1.WPF.Zip.4.dll"/>
+    <ROW Component="C1.Win.C1BarCode.4.dll" ComponentId="{D9D22F9E-47DF-4B01-8AAE-594C53C8D56B}" Directory_="APPDIR" Attributes="0" KeyPath="C1.Win.C1BarCode.4.dll"/>
+    <ROW Component="CanisterDb.DataContracts.dll" ComponentId="{CCC64975-F530-4867-9A6B-991372BADBA0}" Directory_="APPDIR" Attributes="0" KeyPath="CanisterDb.DataContracts.dll"/>
+    <ROW Component="CommonLib.dll" ComponentId="{41A19371-58ED-49D1-9073-C9DAAFE0D41F}" Directory_="APPDIR" Attributes="256" KeyPath="CommonLib.dll"/>
+    <ROW Component="Eula.rtf" ComponentId="{E7B6A939-C25A-4F1C-8DCC-C81484965F24}" Directory_="APPDIR" Attributes="0" KeyPath="Eula.rtf" Type="0"/>
+    <ROW Component="ExpressMapper.dll" ComponentId="{28C4FCA7-7EB7-41CD-B6B3-DD61B9B3D3C5}" Directory_="APPDIR" Attributes="0" KeyPath="ExpressMapper.dll"/>
+    <ROW Component="GenCode128.dll" ComponentId="{24226DFF-A2ED-4C20-9D63-C931F8052383}" Directory_="APPDIR" Attributes="0" KeyPath="GenCode128.dll"/>
+    <ROW Component="Gu.Wpf.FlipView.dll" ComponentId="{FAC372FD-31DA-4071-A786-1CFF2D068FC3}" Directory_="APPDIR" Attributes="0" KeyPath="Gu.Wpf.FlipView.dll"/>
+    <ROW Component="INIFileParser.dll" ComponentId="{2081F751-156C-4E45-9E1B-9E3C17C7524E}" Directory_="APPDIR" Attributes="0" KeyPath="INIFileParser.dll"/>
+    <ROW Component="MaterialDesignColors.dll" ComponentId="{6AA6A717-ECD6-44B5-806D-27C551673BF5}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignColors.dll"/>
+    <ROW Component="MaterialDesignThemes.Wpf.dll" ComponentId="{6F8BCBF1-DFAB-431B-BB7D-6966F6D631EF}" Directory_="APPDIR" Attributes="0" KeyPath="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Component="Microsoft.AspNet.SignalR.Client.dll" ComponentId="{9A37B44F-3FAE-4BDA-A2E0-F3CF70BAEBEA}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.AspNet.SignalR.Client.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary.Co" ComponentId="{2D2B223D-7593-4FB7-A711-0F69102918D4}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.Common.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary.Ex" ComponentId="{1C95A188-6547-4558-B110-B07EC1A71A77}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary.Lo" ComponentId="{189DFE0A-1DE0-4E19-842B-9A72A490DC64}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.Logging.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary.Se" ComponentId="{B0616184-0324-461C-80E7-D072E8DDF5DC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary.Tr" ComponentId="{3DA63D80-8050-413F-982D-742A11ECF350}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary._1" ComponentId="{4331DDB0-6B19-46D1-8ABE-4381527406F0}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary._2" ComponentId="{F7B492D3-5984-4BFE-ADF2-A8D4B11A1903}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll"/>
+    <ROW Component="Microsoft.Practices.EnterpriseLibrary._3" ComponentId="{CE80A230-7AC0-40C6-ACCD-DDCFE5EFDDEE}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.Composition.dl" ComponentId="{7A4A33C3-6B93-424E-99EA-261F29005837}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.Composition.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.Interactivity." ComponentId="{8AC4A0BF-874B-4A8D-B2FC-F2E34F340D17}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.Interactivity.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.Desktop.d" ComponentId="{C46BC613-CE99-4E46-BBA6-61DBAA059A26}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm.Desktop.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.dll" ComponentId="{522F3224-2228-4FA6-8C0C-46BBACFD1B82}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.PubSubEvents.d" ComponentId="{A9F1A238-10AC-4E64-9E67-0F7C15FD6EFC}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.PubSubEvents.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.SharedInterfac" ComponentId="{13FA9301-B441-46BB-BB0D-DFA9D7333945}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.SharedInterfaces.dll"/>
+    <ROW Component="Microsoft.Practices.Prism.UnityExtension" ComponentId="{9EE7C0D3-86F5-4E2F-AF4D-7FF19F08C34D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Prism.UnityExtensions.dll"/>
+    <ROW Component="Microsoft.Practices.ServiceLocation.dll" ComponentId="{CC5E942B-72F4-45DD-9A2D-E2A09CFA5403}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.ServiceLocation.dll"/>
+    <ROW Component="Microsoft.Practices.Unity.Configuration." ComponentId="{7664ADC3-80FD-4571-8CBF-E8E1CD334411}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Unity.Configuration.dll"/>
+    <ROW Component="Microsoft.Practices.Unity.RegistrationBy" ComponentId="{BB84AFF1-E919-4657-8E2B-D66463E1FE75}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Unity.RegistrationByConvention.dll"/>
+    <ROW Component="Microsoft.Practices.Unity.dll" ComponentId="{F606B519-BC64-434F-9B83-EF84233D75EF}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Practices.Unity.dll"/>
+    <ROW Component="Microsoft.ReportViewer.Common.dll" ComponentId="{BCBD68D4-5390-4559-AA5A-13354F26A723}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.ReportViewer.Common.dll"/>
+    <ROW Component="Microsoft.ReportViewer.DataVisualization" ComponentId="{EE07EF3E-BA7E-4D6A-8FFD-240EB6E8711F}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.ReportViewer.DataVisualization.dll"/>
+    <ROW Component="Microsoft.ReportViewer.ProcessingObjectM" ComponentId="{CDBCB19B-4F70-4D94-8F9F-F0AA161287DB}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.ReportViewer.ProcessingObjectModel.dll"/>
+    <ROW Component="Microsoft.ReportViewer.WinForms.dll" ComponentId="{07DDFCF6-3143-4937-AB3F-FF5261810E28}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.ReportViewer.WinForms.dll"/>
+    <ROW Component="Microsoft.SqlServer.Types.dll" ComponentId="{222F6F12-308C-40A9-BF5E-638227FB4B09}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.SqlServer.Types.dll"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll" ComponentId="{D4DA44A6-149C-4559-B38A-AB7951387BF8}" Directory_="de_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_1" ComponentId="{3B0E6998-D583-4F40-B3E7-1ADF9BF7EC6D}" Directory_="es_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_1"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_2" ComponentId="{00C74DAD-C416-41A8-B4E8-B411D9DE377F}" Directory_="fr_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_2"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_3" ComponentId="{30E2D92C-4AC4-46EA-9E96-F8BD0E910D8A}" Directory_="it_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_3"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_4" ComponentId="{B4F31C19-25AF-4FB2-B2AA-E753AEFE23D1}" Directory_="ja_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_4"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_5" ComponentId="{58DD03CC-775B-48DF-83A7-8E4DBFBB3F45}" Directory_="ko_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_5"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_6" ComponentId="{BB1B6B81-ED4B-4743-8AE5-D29EB0DB5EAC}" Directory_="pt_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_6"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_7" ComponentId="{254781E4-EC75-4AD7-AAD6-8C8E4C464BE2}" Directory_="ru_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_7"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_8" ComponentId="{89B69A33-42EF-410A-8C94-9A8932A2E02C}" Directory_="zhHans_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_8"/>
+    <ROW Component="Microsoft.SqlServer.Types.resources.dll_9" ComponentId="{B92BFF9E-BA65-458A-94E5-B7AB26D589C5}" Directory_="zhHant_Dir" Attributes="0" KeyPath="Microsoft.SqlServer.Types.resources.dll_9"/>
+    <ROW Component="Microsoft.mshtml.dll" ComponentId="{D011EE59-90A6-4ADE-9AE5-B8EC88996F3B}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.mshtml.dll"/>
+    <ROW Component="ModuleTracking.dll" ComponentId="{B1E7F166-99ED-41B6-B0FF-0BFBC42ED118}" Directory_="APPDIR" Attributes="256" KeyPath="ModuleTracking.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{B9EAA6E3-EC96-4554-8443-06EE763A6328}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{E431093A-BF9B-4B7D-94E6-26B889690A4D}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="QRCoder.dll" ComponentId="{51D9F491-81D0-460D-9562-AB4855AAAB53}" Directory_="APPDIR" Attributes="0" KeyPath="QRCoder.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{93EE1F91-3F76-4EA8-A212-B74E0C0D6D9A}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SevenZipSharp.dll" ComponentId="{9B17AD4E-CF9C-4BE1-9520-BCC812217ED8}" Directory_="APPDIR" Attributes="0" KeyPath="SevenZipSharp.dll"/>
+    <ROW Component="Spire.License.dll" ComponentId="{54EE112F-74D1-4832-A5FF-454D244C73A9}" Directory_="APPDIR" Attributes="0" KeyPath="Spire.License.dll"/>
+    <ROW Component="Spire.Pdf.dll" ComponentId="{B2831AA5-F933-4AC6-A002-FF0506169998}" Directory_="APPDIR" Attributes="0" KeyPath="Spire.Pdf.dll"/>
+    <ROW Component="System.Net.Http.Formatting.dll" ComponentId="{80F53CDF-CC9F-40AA-B437-78F238DEB6EA}" Directory_="APPDIR" Attributes="0" KeyPath="System.Net.Http.Formatting.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{50783B47-9BC6-49EB-B322-745BF1010E40}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll" ComponentId="{DC5F440F-07F4-45BC-8A70-773941A783F7}" Directory_="de_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_1" ComponentId="{C03C9C79-8B1E-464A-9D6E-72486BB535C3}" Directory_="en_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_1"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_2" ComponentId="{F8F6722D-160D-4849-BCBA-770FECA8DDF9}" Directory_="es_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_2"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_3" ComponentId="{E6A1C9A9-A91A-41F3-90BD-16D4BF25D12B}" Directory_="fr_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_3"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_4" ComponentId="{C1822DD2-C998-4B19-A437-515430491B58}" Directory_="it_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_4"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_5" ComponentId="{99473D87-D703-4D87-847F-829DBB010824}" Directory_="ja_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_5"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_6" ComponentId="{E1ECE602-010C-4C6D-94FD-ABC2D1786443}" Directory_="ko_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_6"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_7" ComponentId="{70A0373E-40E0-48D3-B58B-3F78578D1A84}" Directory_="ru_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_7"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_8" ComponentId="{F3E94072-C640-4249-9E10-1492518DF870}" Directory_="zhHans_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_8"/>
+    <ROW Component="System.Windows.Interactivity.resources.dll_9" ComponentId="{58FAC557-C53E-4AEA-B48C-56E13FC5E260}" Directory_="zhHant_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.resources.dll_9"/>
+    <ROW Component="UnityEngine.dll" ComponentId="{F5120FCF-3D96-4CE1-88BE-8962DCB2BAB5}" Directory_="APPDIR" Attributes="0" KeyPath="UnityEngine.dll"/>
+    <ROW Component="VBM.BCO.exe_1" ComponentId="{88D6A73B-F75E-4E83-B632-D329F4AFB06B}" Directory_="APPDIR" Attributes="0" KeyPath="VBM.BCO.exe_1"/>
+    <ROW Component="VBM.BCO.resources.dll" ComponentId="{0FDC7D19-00CD-4CA8-B21D-3CEE94FD345F}" Directory_="deDE_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll"/>
+    <ROW Component="VBM.BCO.resources.dll_1" ComponentId="{FA54825A-DC3A-4024-8B42-0AC2B61C14D7}" Directory_="frFR_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_1"/>
+    <ROW Component="VBM.BCO.resources.dll_2" ComponentId="{42EA3C16-C206-4318-BE1B-1A9F5CFE8ECF}" Directory_="de_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_2"/>
+    <ROW Component="VBM.BCO.resources.dll_3" ComponentId="{48549A44-C823-4062-ABFB-545E84793606}" Directory_="frCA_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_3"/>
+    <ROW Component="VBM.BCO.resources.dll_4" ComponentId="{AEC4CF17-98A7-4DD2-B104-B2A31AE1FA21}" Directory_="nl_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_4"/>
+    <ROW Component="VBM.BCO.resources.dll_5" ComponentId="{D1CFFA8B-14E1-4EB5-93D4-FFE0EC3AEF62}" Directory_="zhCN_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_5"/>
+    <ROW Component="VBM.BCO.resources.dll_6" ComponentId="{4548CA52-84C7-401C-AA7D-7CEDE6000505}" Directory_="zhTW_Dir" Attributes="0" KeyPath="VBM.BCO.resources.dll_6"/>
+    <ROW Component="VBM_Control_Library.dll" ComponentId="{E526F488-B551-4D11-8BD1-2258350A7FF5}" Directory_="APPDIR" Attributes="0" KeyPath="VBM_Control_Library.dll"/>
+    <ROW Component="ValidationFail.png" ComponentId="{1774B7B3-1AD0-4678-9F61-5966FABF34FF}" Directory_="Images_Dir" Attributes="0" KeyPath="ValidationFail.png" Type="0"/>
+    <ROW Component="WpfAnimatedGif.dll" ComponentId="{3AE53E6A-C6E2-46D8-9B45-F6D1B476063A}" Directory_="APPDIR" Attributes="0" KeyPath="WpfAnimatedGif.dll"/>
+    <ROW Component="WpfControls.dll" ComponentId="{151CF8BD-5EC6-427F-BEF4-CB2A43A14B71}" Directory_="APPDIR" Attributes="0" KeyPath="WpfControls.dll"/>
+    <ROW Component="ZintNetLib.dll" ComponentId="{6A559BAB-DB71-4C01-874C-7F349A400037}" Directory_="APPDIR" Attributes="256" KeyPath="ZintNetLib.dll"/>
+    <ROW Component="ar" ComponentId="{2283DBDA-812A-4DAD-A523-27C5DB239F44}" Directory_="ar_Dir" Attributes="0"/>
+    <ROW Component="bco_report_label_list.config" ComponentId="{6306A559-0813-41A7-975F-6392931D2272}" Directory_="BlisterCheckOut_Dir" Attributes="0" KeyPath="bco_report_label_list.config" Type="0"/>
+    <ROW Component="cs" ComponentId="{B1C0ED8B-6147-40D8-9567-85D03E14F9D6}" Directory_="cs_Dir" Attributes="0"/>
+    <ROW Component="da" ComponentId="{00D93DCD-55C3-4D3B-B559-2114D1B1A762}" Directory_="da_Dir" Attributes="0"/>
+    <ROW Component="el" ComponentId="{46455970-5A3D-47EF-BDDD-30237C9B99B0}" Directory_="el_Dir" Attributes="0"/>
+    <ROW Component="fi" ComponentId="{8F2DAB30-A022-4D88-9E91-52533D03C312}" Directory_="fi_Dir" Attributes="0"/>
+    <ROW Component="he" ComponentId="{585D3125-A079-4B3D-BADE-4F26C35A283D}" Directory_="he_Dir" Attributes="0"/>
+    <ROW Component="itextsharp.dll" ComponentId="{454DCD8C-4B32-41F5-8D38-ACA93A65E096}" Directory_="APPDIR" Attributes="0" KeyPath="itextsharp.dll"/>
+    <ROW Component="no" ComponentId="{06112B2E-E1D9-4659-92FB-B37CDC1CBB42}" Directory_="no_Dir" Attributes="0"/>
+    <ROW Component="pl" ComponentId="{8D7B461F-29DB-4AD0-A3A9-E98239DFF8C3}" Directory_="pl_Dir" Attributes="0"/>
+    <ROW Component="ro" ComponentId="{80D62E35-78AD-49D9-BC1A-4C389BAC2406}" Directory_="ro_Dir" Attributes="0"/>
+    <ROW Component="sk" ComponentId="{522974CF-C9E9-4368-B208-728CB2BC7706}" Directory_="sk_Dir" Attributes="0"/>
+    <ROW Component="sv" ComponentId="{E57D4A20-B5ED-4B93-B13C-8CD88330F605}" Directory_="sv_Dir" Attributes="0"/>
+    <ROW Component="tr" ComponentId="{D7171F46-3E7A-40B5-B41A-A4DF17547E14}" Directory_="tr_Dir" Attributes="0"/>
+    <ROW Component="z.dll" ComponentId="{6D6C0105-8B1F-4827-A76E-83AFC95A6F68}" Directory_="Libs_Dir" Attributes="0" KeyPath="z.dll"/>
+    <ROW Component="z64.dll" ComponentId="{D31F2DE6-0841-415F-9B5F-30F11E30607D}" Directory_="Libs_Dir" Attributes="256" KeyPath="z64.dll"/>
+    <ROW Component="zh" ComponentId="{AB344075-4272-4EEE-9040-C917DEE261C5}" Directory_="zh_Dir" Attributes="0"/>
+    <ROW Component="zhCHS" ComponentId="{06EC5270-D594-42F9-A223-A9FFF293F74A}" Directory_="zhCHS_Dir" Attributes="0"/>
+    <ROW Component="zhCHT" ComponentId="{1986B24F-8CBC-4BBC-944E-EB64EBDDFE49}" Directory_="zhCHT_Dir" Attributes="0"/>
+    <ROW Component="zxing.dll" ComponentId="{6C87F7EF-45E7-4667-8186-9CD6C8A4D115}" Directory_="APPDIR" Attributes="0" KeyPath="zxing.dll"/>
+    <ROW Component="zxing.presentation.dll" ComponentId="{7E44689F-E4F7-4E32-B1EC-E55584B4300C}" Directory_="APPDIR" Attributes="0" KeyPath="zxing.presentation.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_ExePath AllSuportedLanguages.txt AutoMapper.Net4.dll AutoMapper.dll BCO.DataReportModule.dll BCO.DataService.dll BCO.DataService.resources.dll BCO.DataService.resources.dll_1 BCO.DataService.resources.dll_2 BCO.DataService.resources.dll_3 BCO.DetailModule.dll BCO.DetailModule.resources.dll BCO.DetailModule.resources.dll_1 BCO.DetailModule.resources.dll_2 BCO.DetailModule.resources.dll_3 BCO.DetailModule.resources.dll_4 BCO.DetailModule.resources.dll_5 BCO.DsMulReportModule.dll BCO.DsReport.dll BCO.FooterModule.dll BCO.FooterModule.resources.dll BCO.FooterModule.resources.dll_1 BCO.FooterModule.resources.dll_2 BCO.FooterModule.resources.dll_3 BCO.FooterModule.resources.dll_4 BCO.FooterModule.resources.dll_5 BCO.HeaderModule.dll BCO.HeaderModule.resources.dll BCO.HeaderModule.resources.dll_1 BCO.HeaderModule.resources.dll_2 BCO.HeaderModule.resources.dll_3 BCO.HeaderModule.resources.dll_4 BCO.HeaderModule.resources.dll_5 BCO.ImageModule.dll BCO.ImageModule.resources.dll BCO.ImageModule.resources.dll_1 BCO.ImageModule.resources.dll_2 BCO.ImageModule.resources.dll_3 BCO.ImageModule.resources.dll_4 BCO.ImageModule.resources.dll_5 BCO.Infrastructure.dll BCO.LoginModule.dll BCO.LoginModule.resources.dll BCO.LoginModule.resources.dll_1 BCO.LoginModule.resources.dll_2 BCO.LoginModule.resources.dll_3 BCO.LoginModule.resources.dll_4 BCO.LoginModule.resources.dll_5 BCO.McKessonReport.dll BCO.PMCardReport.dll BCO.SelectionModule.dll BCO.SelectionModule.resources.dll BCO.SelectionModule.resources.dll_1 BCO.SelectionModule.resources.dll_2 BCO.SelectionModule.resources.dll_3 BCO.SelectionModule.resources.dll_4 BCO.SureMedReport.dll BlisterLable.xml C1.WPF.4.dll C1.WPF.C1Report.4.dll C1.WPF.DateTimeEditors.4.dll C1.WPF.Pdf.4.dll C1.WPF.Schedule.4.dll C1.WPF.Zip.4.dll C1.Win.C1BarCode.4.dll CanisterDb.DataContracts.dll CommonLib.dll Eula.rtf ExpressMapper.dll GenCode128.dll Gu.Wpf.FlipView.dll INIFileParser.dll MaterialDesignColors.dll MaterialDesignThemes.Wpf.dll Microsoft.AspNet.SignalR.Client.dll Microsoft.Practices.EnterpriseLibrary.Co Microsoft.Practices.EnterpriseLibrary.Ex Microsoft.Practices.EnterpriseLibrary.Lo Microsoft.Practices.EnterpriseLibrary.Se Microsoft.Practices.EnterpriseLibrary.Tr Microsoft.Practices.EnterpriseLibrary._1 Microsoft.Practices.EnterpriseLibrary._2 Microsoft.Practices.EnterpriseLibrary._3 Microsoft.Practices.Prism.Composition.dl Microsoft.Practices.Prism.Interactivity. Microsoft.Practices.Prism.Mvvm.Desktop.d Microsoft.Practices.Prism.Mvvm.dll Microsoft.Practices.Prism.PubSubEvents.d Microsoft.Practices.Prism.SharedInterfac Microsoft.Practices.Prism.UnityExtension Microsoft.Practices.ServiceLocation.dll Microsoft.Practices.Unity.Configuration. Microsoft.Practices.Unity.RegistrationBy Microsoft.Practices.Unity.dll Microsoft.ReportViewer.Common.dll Microsoft.ReportViewer.DataVisualization Microsoft.ReportViewer.ProcessingObjectM Microsoft.ReportViewer.WinForms.dll Microsoft.SqlServer.Types.dll Microsoft.SqlServer.Types.resources.dll Microsoft.SqlServer.Types.resources.dll_1 Microsoft.SqlServer.Types.resources.dll_2 Microsoft.SqlServer.Types.resources.dll_3 Microsoft.SqlServer.Types.resources.dll_4 Microsoft.SqlServer.Types.resources.dll_5 Microsoft.SqlServer.Types.resources.dll_6 Microsoft.SqlServer.Types.resources.dll_7 Microsoft.SqlServer.Types.resources.dll_8 Microsoft.SqlServer.Types.resources.dll_9 Microsoft.mshtml.dll ModuleTracking.dll Newtonsoft.Json.dll ProductInformation QRCoder.dll SHORTCUTDIR SevenZipSharp.dll Spire.License.dll Spire.Pdf.dll System.Net.Http.Formatting.dll System.Windows.Interactivity.dll System.Windows.Interactivity.resources.dll System.Windows.Interactivity.resources.dll_1 System.Windows.Interactivity.resources.dll_2 System.Windows.Interactivity.resources.dll_3 System.Windows.Interactivity.resources.dll_4 System.Windows.Interactivity.resources.dll_5 System.Windows.Interactivity.resources.dll_6 System.Windows.Interactivity.resources.dll_7 System.Windows.Interactivity.resources.dll_8 System.Windows.Interactivity.resources.dll_9 UnityEngine.dll VBM.BCO.exe_1 VBM.BCO.resources.dll VBM.BCO.resources.dll_1 VBM.BCO.resources.dll_2 VBM.BCO.resources.dll_3 VBM.BCO.resources.dll_4 VBM.BCO.resources.dll_5 VBM.BCO.resources.dll_6 VBM_Control_Library.dll ValidationFail.png WpfAnimatedGif.dll WpfControls.dll ZintNetLib.dll ar bco_report_label_list.config cs da el fi he itextsharp.dll no pl ro sk sv tr z.dll z64.dll zh zhCHS zhCHT zxing.dll zxing.presentation.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="AllSuportedLanguages.txt" Component_="AllSuportedLanguages.txt" FileName="ALLSUP~1.TXT|AllSuportedLanguages.txt" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\languages\AllSuportedLanguages.txt" SelfReg="false" NextFile="z.dll"/>
+    <ROW File="AutoMapper.Net4.dll" Component_="AutoMapper.Net4.dll" FileName="AUTOMA~2.DLL|AutoMapper.Net4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\AutoMapper.Net4.dll" SelfReg="false" NextFile="BCO.DataReportModule.dll"/>
+    <ROW File="AutoMapper.dll" Component_="AutoMapper.dll" FileName="AUTOMA~1.DLL|AutoMapper.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\AutoMapper.dll" SelfReg="false" NextFile="AutoMapper.Net4.dll"/>
+    <ROW File="AutoMapper.xml" Component_="Eula.rtf" FileName="AUTOMA~1.XML|AutoMapper.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\AutoMapper.xml" SelfReg="false" NextFile="BCO.DataReportModule.dll.config"/>
+    <ROW File="BCO.DataReportModule.dll" Component_="BCO.DataReportModule.dll" FileName="BCODAT~1.DLL|BCO.DataReportModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DataReportModule.dll" SelfReg="false" NextFile="BCO.DataService.dll"/>
+    <ROW File="BCO.DataReportModule.dll.config" Component_="Eula.rtf" FileName="BCODAT~1.CON|BCO.DataReportModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DataReportModule.dll.config" SelfReg="false" NextFile="BCO.DataService.dll.config"/>
+    <ROW File="BCO.DataService.dll" Component_="BCO.DataService.dll" FileName="BCODAT~2.DLL|BCO.DataService.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DataService.dll" SelfReg="false" NextFile="BCO.DetailModule.dll"/>
+    <ROW File="BCO.DataService.dll.config" Component_="Eula.rtf" FileName="BCODAT~2.CON|BCO.DataService.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DataService.dll.config" SelfReg="false" NextFile="BCO.DetailModule.dll.config"/>
+    <ROW File="BCO.DataService.resources.dll" Component_="BCO.DataService.resources.dll" FileName="BCODAT~1.DLL|BCO.DataService.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.DataService.resources.dll" SelfReg="false" NextFile="BCO.DetailModule.resources.dll_3"/>
+    <ROW File="BCO.DataService.resources.dll_1" Component_="BCO.DataService.resources.dll_1" FileName="BCODAT~1.DLL|BCO.DataService.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.DataService.resources.dll" SelfReg="false" NextFile="BCO.DetailModule.resources.dll_1"/>
+    <ROW File="BCO.DataService.resources.dll_2" Component_="BCO.DataService.resources.dll_2" FileName="BCODAT~1.DLL|BCO.DataService.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.DataService.resources.dll" SelfReg="false" NextFile="BCO.DetailModule.resources.dll_4"/>
+    <ROW File="BCO.DataService.resources.dll_3" Component_="BCO.DataService.resources.dll_3" FileName="BCODAT~1.DLL|BCO.DataService.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.DataService.resources.dll" SelfReg="false" NextFile="BCO.DetailModule.resources.dll_5"/>
+    <ROW File="BCO.DetailModule.dll" Component_="BCO.DetailModule.dll" FileName="BCODET~1.DLL|BCO.DetailModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DetailModule.dll" SelfReg="false" NextFile="BCO.FooterModule.dll"/>
+    <ROW File="BCO.DetailModule.dll.config" Component_="Eula.rtf" FileName="BCODET~1.CON|BCO.DetailModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.DetailModule.dll.config" SelfReg="false" NextFile="BCO.FooterModule.dll.config"/>
+    <ROW File="BCO.DetailModule.resources.dll" Component_="BCO.DetailModule.resources.dll" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll"/>
+    <ROW File="BCO.DetailModule.resources.dll_1" Component_="BCO.DetailModule.resources.dll_1" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll_1"/>
+    <ROW File="BCO.DetailModule.resources.dll_2" Component_="BCO.DetailModule.resources.dll_2" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll_2"/>
+    <ROW File="BCO.DetailModule.resources.dll_3" Component_="BCO.DetailModule.resources.dll_3" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll_3"/>
+    <ROW File="BCO.DetailModule.resources.dll_4" Component_="BCO.DetailModule.resources.dll_4" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll_4"/>
+    <ROW File="BCO.DetailModule.resources.dll_5" Component_="BCO.DetailModule.resources.dll_5" FileName="BCODET~1.DLL|BCO.DetailModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.DetailModule.resources.dll" SelfReg="false" NextFile="BCO.FooterModule.resources.dll_5"/>
+    <ROW File="BCO.DsMulReportModule.dll" Component_="BCO.DsMulReportModule.dll" FileName="BCODSM~1.DLL|BCO.DsMulReportModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\modules\BCO.DsMulReportModule.dll" SelfReg="false" NextFile="BCO.DsReport.dll"/>
+    <ROW File="BCO.DsReport.dll" Component_="BCO.DsReport.dll" FileName="BCODSR~1.DLL|BCO.DsReport.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\modules\BCO.DsReport.dll" SelfReg="false" NextFile="BCO.McKessonReport.dll"/>
+    <ROW File="BCO.FooterModule.dll" Component_="BCO.FooterModule.dll" FileName="BCOFOO~1.DLL|BCO.FooterModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.FooterModule.dll" SelfReg="false" NextFile="BCO.HeaderModule.dll"/>
+    <ROW File="BCO.FooterModule.dll.config" Component_="Eula.rtf" FileName="BCOFOO~1.CON|BCO.FooterModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.FooterModule.dll.config" SelfReg="false" NextFile="BCO.HeaderModule.dll.config"/>
+    <ROW File="BCO.FooterModule.resources.dll" Component_="BCO.FooterModule.resources.dll" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll"/>
+    <ROW File="BCO.FooterModule.resources.dll_1" Component_="BCO.FooterModule.resources.dll_1" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll_1"/>
+    <ROW File="BCO.FooterModule.resources.dll_2" Component_="BCO.FooterModule.resources.dll_2" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll_2"/>
+    <ROW File="BCO.FooterModule.resources.dll_3" Component_="BCO.FooterModule.resources.dll_3" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll_3"/>
+    <ROW File="BCO.FooterModule.resources.dll_4" Component_="BCO.FooterModule.resources.dll_4" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll_4"/>
+    <ROW File="BCO.FooterModule.resources.dll_5" Component_="BCO.FooterModule.resources.dll_5" FileName="BCOFOO~1.DLL|BCO.FooterModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.FooterModule.resources.dll" SelfReg="false" NextFile="BCO.HeaderModule.resources.dll_5"/>
+    <ROW File="BCO.HeaderModule.dll" Component_="BCO.HeaderModule.dll" FileName="BCOHEA~1.DLL|BCO.HeaderModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.HeaderModule.dll" SelfReg="false" NextFile="BCO.ImageModule.dll"/>
+    <ROW File="BCO.HeaderModule.dll.config" Component_="Eula.rtf" FileName="BCOHEA~1.CON|BCO.HeaderModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.HeaderModule.dll.config" SelfReg="false" NextFile="BCO.ImageModule.dll.config"/>
+    <ROW File="BCO.HeaderModule.resources.dll" Component_="BCO.HeaderModule.resources.dll" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll"/>
+    <ROW File="BCO.HeaderModule.resources.dll_1" Component_="BCO.HeaderModule.resources.dll_1" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll_1"/>
+    <ROW File="BCO.HeaderModule.resources.dll_2" Component_="BCO.HeaderModule.resources.dll_2" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll_2"/>
+    <ROW File="BCO.HeaderModule.resources.dll_3" Component_="BCO.HeaderModule.resources.dll_3" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll_3"/>
+    <ROW File="BCO.HeaderModule.resources.dll_4" Component_="BCO.HeaderModule.resources.dll_4" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll_4"/>
+    <ROW File="BCO.HeaderModule.resources.dll_5" Component_="BCO.HeaderModule.resources.dll_5" FileName="BCOHEA~1.DLL|BCO.HeaderModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.HeaderModule.resources.dll" SelfReg="false" NextFile="BCO.ImageModule.resources.dll_5"/>
+    <ROW File="BCO.ImageModule.dll" Component_="BCO.ImageModule.dll" FileName="BCOIMA~1.DLL|BCO.ImageModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.ImageModule.dll" SelfReg="false" NextFile="BCO.Infrastructure.dll"/>
+    <ROW File="BCO.ImageModule.dll.config" Component_="Eula.rtf" FileName="BCOIMA~1.CON|BCO.ImageModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.ImageModule.dll.config" SelfReg="false" NextFile="BCO.Infrastructure.dll.config"/>
+    <ROW File="BCO.ImageModule.resources.dll" Component_="BCO.ImageModule.resources.dll" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll"/>
+    <ROW File="BCO.ImageModule.resources.dll_1" Component_="BCO.ImageModule.resources.dll_1" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll_1"/>
+    <ROW File="BCO.ImageModule.resources.dll_2" Component_="BCO.ImageModule.resources.dll_2" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll_2"/>
+    <ROW File="BCO.ImageModule.resources.dll_3" Component_="BCO.ImageModule.resources.dll_3" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll_3"/>
+    <ROW File="BCO.ImageModule.resources.dll_4" Component_="BCO.ImageModule.resources.dll_4" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll_4"/>
+    <ROW File="BCO.ImageModule.resources.dll_5" Component_="BCO.ImageModule.resources.dll_5" FileName="BCOIMA~1.DLL|BCO.ImageModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.ImageModule.resources.dll" SelfReg="false" NextFile="BCO.LoginModule.resources.dll_5"/>
+    <ROW File="BCO.Infrastructure.dll" Component_="BCO.Infrastructure.dll" FileName="BCOINF~1.DLL|BCO.Infrastructure.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.Infrastructure.dll" SelfReg="false" NextFile="BCO.LoginModule.dll"/>
+    <ROW File="BCO.Infrastructure.dll.config" Component_="Eula.rtf" FileName="BCOINF~1.CON|BCO.Infrastructure.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.Infrastructure.dll.config" SelfReg="false" NextFile="BCO.LoginModule.dll.config"/>
+    <ROW File="BCO.LoginModule.dll" Component_="BCO.LoginModule.dll" FileName="BCOLOG~1.DLL|BCO.LoginModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.LoginModule.dll" SelfReg="false" NextFile="BCO.SelectionModule.dll"/>
+    <ROW File="BCO.LoginModule.dll.config" Component_="Eula.rtf" FileName="BCOLOG~1.CON|BCO.LoginModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.LoginModule.dll.config" SelfReg="false" NextFile="BCO.SelectionModule.dll.config"/>
+    <ROW File="BCO.LoginModule.resources.dll" Component_="BCO.LoginModule.resources.dll" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="BCO.SelectionModule.resources.dll"/>
+    <ROW File="BCO.LoginModule.resources.dll_1" Component_="BCO.LoginModule.resources.dll_1" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="BCO.SelectionModule.resources.dll_2"/>
+    <ROW File="BCO.LoginModule.resources.dll_2" Component_="BCO.LoginModule.resources.dll_2" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll"/>
+    <ROW File="BCO.LoginModule.resources.dll_3" Component_="BCO.LoginModule.resources.dll_3" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="BCO.SelectionModule.resources.dll_1"/>
+    <ROW File="BCO.LoginModule.resources.dll_4" Component_="BCO.LoginModule.resources.dll_4" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="BCO.SelectionModule.resources.dll_3"/>
+    <ROW File="BCO.LoginModule.resources.dll_5" Component_="BCO.LoginModule.resources.dll_5" FileName="BCOLOG~1.DLL|BCO.LoginModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.LoginModule.resources.dll" SelfReg="false" NextFile="BCO.SelectionModule.resources.dll_4"/>
+    <ROW File="BCO.McKessonReport.dll" Component_="BCO.McKessonReport.dll" FileName="BCOMCK~1.DLL|BCO.McKessonReport.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\modules\BCO.McKessonReport.dll" SelfReg="false" NextFile="BCO.PMCardReport.dll"/>
+    <ROW File="BCO.PMCardReport.dll" Component_="BCO.PMCardReport.dll" FileName="BCOPMC~1.DLL|BCO.PMCardReport.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\modules\BCO.PMCardReport.dll" SelfReg="false" NextFile="BCO.SureMedReport.dll"/>
+    <ROW File="BCO.SelectionModule.dll" Component_="BCO.SelectionModule.dll" FileName="BCOSEL~1.DLL|BCO.SelectionModule.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.SelectionModule.dll" SelfReg="false" NextFile="C1.Win.C1BarCode.4.dll"/>
+    <ROW File="BCO.SelectionModule.dll.config" Component_="Eula.rtf" FileName="BCOSEL~1.CON|BCO.SelectionModule.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\BCO.SelectionModule.dll.config" SelfReg="false" NextFile="CommonLib.dll.config"/>
+    <ROW File="BCO.SelectionModule.resources.dll" Component_="BCO.SelectionModule.resources.dll" FileName="BCOSEL~1.DLL|BCO.SelectionModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\BCO.SelectionModule.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_3"/>
+    <ROW File="BCO.SelectionModule.resources.dll_1" Component_="BCO.SelectionModule.resources.dll_1" FileName="BCOSEL~1.DLL|BCO.SelectionModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\BCO.SelectionModule.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_5"/>
+    <ROW File="BCO.SelectionModule.resources.dll_2" Component_="BCO.SelectionModule.resources.dll_2" FileName="BCOSEL~1.DLL|BCO.SelectionModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\BCO.SelectionModule.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_1"/>
+    <ROW File="BCO.SelectionModule.resources.dll_3" Component_="BCO.SelectionModule.resources.dll_3" FileName="BCOSEL~1.DLL|BCO.SelectionModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\BCO.SelectionModule.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_4"/>
+    <ROW File="BCO.SelectionModule.resources.dll_4" Component_="BCO.SelectionModule.resources.dll_4" FileName="BCOSEL~1.DLL|BCO.SelectionModule.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\BCO.SelectionModule.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_6"/>
+    <ROW File="BCO.SureMedReport.dll" Component_="BCO.SureMedReport.dll" FileName="BCOSUR~1.DLL|BCO.SureMedReport.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\modules\BCO.SureMedReport.dll" SelfReg="false" NextFile="BCO.DataService.resources.dll_2"/>
+    <ROW File="BlisterLable.xml" Component_="BlisterLable.xml" FileName="BLISTE~1.XML|BlisterLable.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\BlisterLable.xml" SelfReg="false" NextFile="CupDetail.xml"/>
+    <ROW File="C1.WPF.4.dll" Component_="C1.WPF.4.dll" FileName="C1WPF4~1.DLL|C1.WPF.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.4.dll" SelfReg="false" NextFile="C1.WPF.C1Report.4.dll"/>
+    <ROW File="C1.WPF.C1Report.4.dll" Component_="C1.WPF.C1Report.4.dll" FileName="C1WPFC~1.DLL|C1.WPF.C1Report.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.C1Report.4.dll" SelfReg="false" NextFile="C1.WPF.DateTimeEditors.4.dll"/>
+    <ROW File="C1.WPF.DateTimeEditors.4.dll" Component_="C1.WPF.DateTimeEditors.4.dll" FileName="C1WPFD~1.DLL|C1.WPF.DateTimeEditors.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.DateTimeEditors.4.dll" SelfReg="false" NextFile="C1.WPF.Pdf.4.dll"/>
+    <ROW File="C1.WPF.Pdf.4.dll" Component_="C1.WPF.Pdf.4.dll" FileName="C1WPFP~1.DLL|C1.WPF.Pdf.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.Pdf.4.dll" SelfReg="false" NextFile="C1.WPF.Schedule.4.dll"/>
+    <ROW File="C1.WPF.Schedule.4.dll" Component_="C1.WPF.Schedule.4.dll" FileName="C1WPFS~1.DLL|C1.WPF.Schedule.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.Schedule.4.dll" SelfReg="false" NextFile="CanisterDb.DataContracts.dll"/>
+    <ROW File="C1.WPF.Zip.4.dll" Component_="C1.WPF.Zip.4.dll" FileName="C1WPFZ~1.DLL|C1.WPF.Zip.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.Zip.4.dll" SelfReg="false" NextFile="C1.WPF.Zip.4.xml"/>
+    <ROW File="C1.WPF.Zip.4.xml" Component_="Eula.rtf" FileName="C1WPFZ~1.XML|C1.WPF.Zip.4.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.WPF.Zip.4.xml" SelfReg="false" NextFile="BCO.DetailModule.resources.dll_2"/>
+    <ROW File="C1.Win.C1BarCode.4.dll" Component_="C1.Win.C1BarCode.4.dll" FileName="C1WINC~1.DLL|C1.Win.C1BarCode.4.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\C1.Win.C1BarCode.4.dll" SelfReg="false" NextFile="C1.WPF.4.dll"/>
+    <ROW File="CanisterDb.DataContracts.dll" Component_="CanisterDb.DataContracts.dll" FileName="CANIST~1.DLL|CanisterDb.DataContracts.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\CanisterDb.DataContracts.dll" SelfReg="false" NextFile="CommonLib.dll"/>
+    <ROW File="CommonLib.dll" Component_="CommonLib.dll" FileName="COMMON~1.DLL|CommonLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\CommonLib.dll" SelfReg="false" NextFile="ExpressMapper.dll"/>
+    <ROW File="CommonLib.dll.config" Component_="Eula.rtf" FileName="COMMON~1.CON|CommonLib.dll.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\CommonLib.dll.config" SelfReg="false" NextFile="ConfuserEx.crproj"/>
+    <ROW File="ConfuserEx.crproj" Component_="Eula.rtf" FileName="CONFUS~1.CRP|ConfuserEx.crproj" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\source\VBM.BCO-Release 1.7\VBM_BCO\bin\x64\ObfuscatedRelease\ConfuserEx.crproj" SelfReg="false" NextFile="ExpressMapper.xml"/>
+    <ROW File="CupDetail.xml" Component_="BlisterLable.xml" FileName="CUPDET~1.XML|CupDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\CupDetail.xml" SelfReg="false" NextFile="CupPillDetail.xml"/>
+    <ROW File="CupPillDetail.xml" Component_="BlisterLable.xml" FileName="CUPPIL~1.XML|CupPillDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\CupPillDetail.xml" SelfReg="false" NextFile="PillDetail.xml"/>
+    <ROW File="Eula.rtf" Component_="Eula.rtf" FileName="Eula.rtf" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Eula.rtf" SelfReg="false" NextFile="VBM.BCO.exe.config"/>
+    <ROW File="ExpressMapper.dll" Component_="ExpressMapper.dll" FileName="EXPRES~1.DLL|ExpressMapper.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ExpressMapper.dll" SelfReg="false" NextFile="Gu.Wpf.FlipView.dll"/>
+    <ROW File="ExpressMapper.xml" Component_="Eula.rtf" FileName="EXPRES~1.XML|ExpressMapper.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ExpressMapper.xml" SelfReg="false" NextFile="INIFileParser.xml"/>
+    <ROW File="GenCode128.dll" Component_="GenCode128.dll" FileName="GENCOD~1.DLL|GenCode128.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\GenCode128.dll" SelfReg="false" NextFile="AutoMapper.xml"/>
+    <ROW File="Gu.Wpf.FlipView.dll" Component_="Gu.Wpf.FlipView.dll" FileName="GUWPFF~1.DLL|Gu.Wpf.FlipView.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Gu.Wpf.FlipView.dll" SelfReg="false" NextFile="INIFileParser.dll"/>
+    <ROW File="INIFileParser.dll" Component_="INIFileParser.dll" FileName="INIFIL~1.DLL|INIFileParser.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\INIFileParser.dll" SelfReg="false" NextFile="MaterialDesignColors.dll"/>
+    <ROW File="INIFileParser.xml" Component_="Eula.rtf" FileName="INIFIL~1.XML|INIFileParser.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\INIFileParser.xml" SelfReg="false" NextFile="itextsharp.xml"/>
+    <ROW File="MaterialDesignColors.dll" Component_="MaterialDesignColors.dll" FileName="MATERI~1.DLL|MaterialDesignColors.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\MaterialDesignColors.dll" SelfReg="false" NextFile="MaterialDesignThemes.Wpf.dll"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="MaterialDesignThemes.Wpf.dll" FileName="MATERI~2.DLL|MaterialDesignThemes.Wpf.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\MaterialDesignThemes.Wpf.dll" SelfReg="false" NextFile="Microsoft.AspNet.SignalR.Client.dll"/>
+    <ROW File="Microsoft.AspNet.SignalR.Client.dll" Component_="Microsoft.AspNet.SignalR.Client.dll" FileName="MICROS~1.DLL|Microsoft.AspNet.SignalR.Client.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.AspNet.SignalR.Client.dll" SelfReg="false" NextFile="Microsoft.mshtml.dll"/>
+    <ROW File="Microsoft.AspNet.SignalR.Client.xml" Component_="Eula.rtf" FileName="MICROS~1.XML|Microsoft.AspNet.SignalR.Client.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.AspNet.SignalR.Client.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.Common.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.Common.dll" Component_="Microsoft.Practices.EnterpriseLibrary.Co" FileName="MICROS~3.DLL|Microsoft.Practices.EnterpriseLibrary.Common.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.Common.xml" Component_="Eula.rtf" FileName="MICROS~2.XML|Microsoft.Practices.EnterpriseLibrary.Common.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Component_="Microsoft.Practices.EnterpriseLibrary.Ex" FileName="MICROS~4.DLL|Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.Logging.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml" Component_="Eula.rtf" FileName="MICROS~3.XML|Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.Logging.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.Logging.dll" Component_="Microsoft.Practices.EnterpriseLibrary.Lo" FileName="MICROS~5.DLL|Microsoft.Practices.EnterpriseLibrary.Logging.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.Logging.xml" Component_="Eula.rtf" FileName="MICROS~4.XML|Microsoft.Practices.EnterpriseLibrary.Logging.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll" Component_="Microsoft.Practices.EnterpriseLibrary.Se" FileName="MICROS~6.DLL|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.xml" Component_="Eula.rtf" FileName="MICROS~5.XML|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Database.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll" Component_="Microsoft.Practices.EnterpriseLibrary._2" FileName="MICROS~8.DLL|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.xml" Component_="Eula.rtf" FileName="MICROS~6.XML|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll" Component_="Microsoft.Practices.EnterpriseLibrary._1" FileName="MICROS~7.DLL|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.TextFile.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml" Component_="Eula.rtf" FileName="MICROS~7.XML|Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll" Component_="Microsoft.Practices.EnterpriseLibrary.Tr" FileName="MICROS~9.DLL|Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml" Component_="Eula.rtf" FileName="MICROS~8.XML|Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.xml" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll" Component_="Microsoft.Practices.EnterpriseLibrary._3" FileName="MICRO~10.DLL|Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.Composition.dll"/>
+    <ROW File="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml" Component_="Eula.rtf" FileName="MICROS~9.XML|Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.xml" SelfReg="false" NextFile="Microsoft.Practices.Prism.Composition.xml"/>
+    <ROW File="Microsoft.Practices.Prism.Composition.dll" Component_="Microsoft.Practices.Prism.Composition.dl" FileName="MICRO~11.DLL|Microsoft.Practices.Prism.Composition.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Composition.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.Interactivity.dll"/>
+    <ROW File="Microsoft.Practices.Prism.Composition.xml" Component_="Eula.rtf" FileName="MICRO~10.XML|Microsoft.Practices.Prism.Composition.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Composition.xml" SelfReg="false" NextFile="Microsoft.Practices.Prism.Interactivity.xml"/>
+    <ROW File="Microsoft.Practices.Prism.Interactivity.dll" Component_="Microsoft.Practices.Prism.Interactivity." FileName="MICRO~12.DLL|Microsoft.Practices.Prism.Interactivity.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Interactivity.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.Mvvm.Desktop.dll"/>
+    <ROW File="Microsoft.Practices.Prism.Interactivity.xml" Component_="Eula.rtf" FileName="MICRO~11.XML|Microsoft.Practices.Prism.Interactivity.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Interactivity.xml" SelfReg="false" NextFile="Microsoft.Practices.Prism.Mvvm.xml"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm.Desktop.dll" Component_="Microsoft.Practices.Prism.Mvvm.Desktop.d" FileName="MICRO~13.DLL|Microsoft.Practices.Prism.Mvvm.Desktop.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Mvvm.Desktop.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.Mvvm.dll"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm.dll" Component_="Microsoft.Practices.Prism.Mvvm.dll" FileName="MICRO~14.DLL|Microsoft.Practices.Prism.Mvvm.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Mvvm.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.PubSubEvents.dll"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm.xml" Component_="Eula.rtf" FileName="MICRO~12.XML|Microsoft.Practices.Prism.Mvvm.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.Mvvm.xml" SelfReg="false" NextFile="Microsoft.Practices.Prism.SharedInterfaces.xml"/>
+    <ROW File="Microsoft.Practices.Prism.PubSubEvents.dll" Component_="Microsoft.Practices.Prism.PubSubEvents.d" FileName="MICRO~15.DLL|Microsoft.Practices.Prism.PubSubEvents.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.PubSubEvents.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.SharedInterfaces.dll"/>
+    <ROW File="Microsoft.Practices.Prism.SharedInterfaces.dll" Component_="Microsoft.Practices.Prism.SharedInterfac" FileName="MICRO~16.DLL|Microsoft.Practices.Prism.SharedInterfaces.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.SharedInterfaces.dll" SelfReg="false" NextFile="Microsoft.Practices.Prism.UnityExtensions.dll"/>
+    <ROW File="Microsoft.Practices.Prism.SharedInterfaces.xml" Component_="Eula.rtf" FileName="MICRO~13.XML|Microsoft.Practices.Prism.SharedInterfaces.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.SharedInterfaces.xml" SelfReg="false" NextFile="Microsoft.Practices.Prism.UnityExtensions.xml"/>
+    <ROW File="Microsoft.Practices.Prism.UnityExtensions.dll" Component_="Microsoft.Practices.Prism.UnityExtension" FileName="MICRO~17.DLL|Microsoft.Practices.Prism.UnityExtensions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.UnityExtensions.dll" SelfReg="false" NextFile="Microsoft.Practices.ServiceLocation.dll"/>
+    <ROW File="Microsoft.Practices.Prism.UnityExtensions.xml" Component_="Eula.rtf" FileName="MICRO~14.XML|Microsoft.Practices.Prism.UnityExtensions.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Prism.UnityExtensions.xml" SelfReg="false" NextFile="Microsoft.Practices.ServiceLocation.xml"/>
+    <ROW File="Microsoft.Practices.ServiceLocation.dll" Component_="Microsoft.Practices.ServiceLocation.dll" FileName="MICRO~18.DLL|Microsoft.Practices.ServiceLocation.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.ServiceLocation.dll" SelfReg="false" NextFile="Microsoft.Practices.Unity.Configuration.dll"/>
+    <ROW File="Microsoft.Practices.ServiceLocation.xml" Component_="Eula.rtf" FileName="MICRO~15.XML|Microsoft.Practices.ServiceLocation.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.ServiceLocation.xml" SelfReg="false" NextFile="Microsoft.Practices.Unity.Configuration.xml"/>
+    <ROW File="Microsoft.Practices.Unity.Configuration.dll" Component_="Microsoft.Practices.Unity.Configuration." FileName="MICRO~19.DLL|Microsoft.Practices.Unity.Configuration.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.Configuration.dll" SelfReg="false" NextFile="Microsoft.Practices.Unity.dll"/>
+    <ROW File="Microsoft.Practices.Unity.Configuration.xml" Component_="Eula.rtf" FileName="MICRO~16.XML|Microsoft.Practices.Unity.Configuration.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.Configuration.xml" SelfReg="false" NextFile="Microsoft.Practices.Unity.RegistrationByConvention.xml"/>
+    <ROW File="Microsoft.Practices.Unity.RegistrationByConvention.dll" Component_="Microsoft.Practices.Unity.RegistrationBy" FileName="MICRO~21.DLL|Microsoft.Practices.Unity.RegistrationByConvention.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll" SelfReg="false" NextFile="Microsoft.ReportViewer.Common.dll"/>
+    <ROW File="Microsoft.Practices.Unity.RegistrationByConvention.xml" Component_="Eula.rtf" FileName="MICRO~17.XML|Microsoft.Practices.Unity.RegistrationByConvention.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml" SelfReg="false" NextFile="Microsoft.Practices.Unity.xml"/>
+    <ROW File="Microsoft.Practices.Unity.dll" Component_="Microsoft.Practices.Unity.dll" FileName="MICRO~20.DLL|Microsoft.Practices.Unity.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.dll" SelfReg="false" NextFile="Microsoft.Practices.Unity.RegistrationByConvention.dll"/>
+    <ROW File="Microsoft.Practices.Unity.xml" Component_="Eula.rtf" FileName="MICRO~18.XML|Microsoft.Practices.Unity.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.Practices.Unity.xml" SelfReg="false" NextFile="Microsoft.SqlServer.Types.dll"/>
+    <ROW File="Microsoft.ReportViewer.Common.dll" Component_="Microsoft.ReportViewer.Common.dll" FileName="MICRO~22.DLL|Microsoft.ReportViewer.Common.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.ReportViewer.Common.dll" SelfReg="false" NextFile="Microsoft.ReportViewer.DataVisualization.dll"/>
+    <ROW File="Microsoft.ReportViewer.DataVisualization.dll" Component_="Microsoft.ReportViewer.DataVisualization" FileName="MICRO~23.DLL|Microsoft.ReportViewer.DataVisualization.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.ReportViewer.DataVisualization.dll" SelfReg="false" NextFile="Microsoft.ReportViewer.ProcessingObjectModel.dll"/>
+    <ROW File="Microsoft.ReportViewer.ProcessingObjectModel.dll" Component_="Microsoft.ReportViewer.ProcessingObjectM" FileName="MICRO~24.DLL|Microsoft.ReportViewer.ProcessingObjectModel.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll" SelfReg="false" NextFile="Microsoft.ReportViewer.WinForms.dll"/>
+    <ROW File="Microsoft.ReportViewer.WinForms.dll" Component_="Microsoft.ReportViewer.WinForms.dll" FileName="MICRO~25.DLL|Microsoft.ReportViewer.WinForms.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.ReportViewer.WinForms.dll" SelfReg="false" NextFile="ModuleTracking.dll"/>
+    <ROW File="Microsoft.SqlServer.Types.dll" Component_="Microsoft.SqlServer.Types.dll" FileName="MICRO~26.DLL|Microsoft.SqlServer.Types.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.SqlServer.Types.dll" SelfReg="false" NextFile="Newtonsoft.Json.xml"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll" Component_="Microsoft.SqlServer.Types.resources.dll" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_1" Component_="Microsoft.SqlServer.Types.resources.dll_1" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\es\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_2"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_2" Component_="Microsoft.SqlServer.Types.resources.dll_2" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_3"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_3" Component_="Microsoft.SqlServer.Types.resources.dll_3" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\it\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_4"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_4" Component_="Microsoft.SqlServer.Types.resources.dll_4" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ja\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_5"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_5" Component_="Microsoft.SqlServer.Types.resources.dll_5" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ko\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_6"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_6" Component_="Microsoft.SqlServer.Types.resources.dll_6" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\pt\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="BlisterLable.xml"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_7" Component_="Microsoft.SqlServer.Types.resources.dll_7" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ru\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_7"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_8" Component_="Microsoft.SqlServer.Types.resources.dll_8" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_8"/>
+    <ROW File="Microsoft.SqlServer.Types.resources.dll_9" Component_="Microsoft.SqlServer.Types.resources.dll_9" FileName="MICROS~1.DLL|Microsoft.SqlServer.Types.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_9"/>
+    <ROW File="Microsoft.mshtml.dll" Component_="Microsoft.mshtml.dll" FileName="MICROS~2.DLL|Microsoft.mshtml.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Microsoft.mshtml.dll" SelfReg="false" NextFile="Microsoft.Practices.EnterpriseLibrary.Common.dll"/>
+    <ROW File="ModuleTracking.dll" Component_="ModuleTracking.dll" FileName="MODULE~1.DLL|ModuleTracking.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ModuleTracking.dll" SelfReg="false" NextFile="Newtonsoft.Json.dll"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Newtonsoft.Json.dll" SelfReg="false" NextFile="QRCoder.dll"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="Eula.rtf" FileName="NEWTON~1.XML|Newtonsoft.Json.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Newtonsoft.Json.xml" SelfReg="false" NextFile="Spire.License.xml"/>
+    <ROW File="PillDetail.xml" Component_="BlisterLable.xml" FileName="PILLDE~1.XML|PillDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\PillDetail.xml" SelfReg="false" NextFile="RefillPillDetail.xml"/>
+    <ROW File="QRCoder.dll" Component_="QRCoder.dll" FileName="QRCoder.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\QRCoder.dll" SelfReg="false" NextFile="Spire.License.dll"/>
+    <ROW File="RefillPillDetail.xml" Component_="BlisterLable.xml" FileName="REFILL~1.XML|RefillPillDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\RefillPillDetail.xml" SelfReg="false" NextFile="ShortCupDetail.xml"/>
+    <ROW File="SevenZipSharp.dll" Component_="SevenZipSharp.dll" FileName="SEVENZ~1.DLL|SevenZipSharp.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\SevenZipSharp.dll" SelfReg="false" NextFile="itextsharp.dll"/>
+    <ROW File="ShortCupDetail.xml" Component_="BlisterLable.xml" FileName="SHORTC~1.XML|ShortCupDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\ShortCupDetail.xml" SelfReg="false" NextFile="ShortPillDetail.xml"/>
+    <ROW File="ShortPillDetail.xml" Component_="BlisterLable.xml" FileName="SHORTP~1.XML|ShortPillDetail.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Reports\ShortPillDetail.xml" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_7"/>
+    <ROW File="Spire.License.dll" Component_="Spire.License.dll" FileName="SPIREL~1.DLL|Spire.License.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Spire.License.dll" SelfReg="false" NextFile="Spire.Pdf.dll"/>
+    <ROW File="Spire.License.xml" Component_="Eula.rtf" FileName="SPIREL~1.XML|Spire.License.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Spire.License.xml" SelfReg="false" NextFile="Spire.Pdf.xml"/>
+    <ROW File="Spire.Pdf.dll" Component_="Spire.Pdf.dll" FileName="SPIREP~1.DLL|Spire.Pdf.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Spire.Pdf.dll" SelfReg="false" NextFile="System.Net.Http.Formatting.dll"/>
+    <ROW File="Spire.Pdf.xml" Component_="Eula.rtf" FileName="SPIREP~1.XML|Spire.Pdf.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Spire.Pdf.xml" SelfReg="false" NextFile="System.Net.Http.Formatting.xml"/>
+    <ROW File="System.Net.Http.Formatting.dll" Component_="System.Net.Http.Formatting.dll" FileName="SYSTEM~1.DLL|System.Net.Http.Formatting.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\System.Net.Http.Formatting.dll" SelfReg="false" NextFile="System.Windows.Interactivity.dll"/>
+    <ROW File="System.Net.Http.Formatting.xml" Component_="Eula.rtf" FileName="SYSTEM~1.XML|System.Net.Http.Formatting.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\System.Net.Http.Formatting.xml" SelfReg="false" NextFile="WpfAnimatedGif.xml"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~2.DLL|System.Windows.Interactivity.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\System.Windows.Interactivity.dll" SelfReg="false" NextFile="UnityEngine.dll"/>
+    <ROW File="System.Windows.Interactivity.resources.dll" Component_="System.Windows.Interactivity.resources.dll" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll_2"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_1" Component_="System.Windows.Interactivity.resources.dll_1" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\en\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_1"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_2" Component_="System.Windows.Interactivity.resources.dll_2" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\es\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_2"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_3" Component_="System.Windows.Interactivity.resources.dll_3" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="BCO.DetailModule.resources.dll"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_4" Component_="System.Windows.Interactivity.resources.dll_4" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\it\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_4"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_5" Component_="System.Windows.Interactivity.resources.dll_5" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ja\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_5"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_6" Component_="System.Windows.Interactivity.resources.dll_6" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ko\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="AllSuportedLanguages.txt"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_7" Component_="System.Windows.Interactivity.resources.dll_7" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ru\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="BCO.DataService.resources.dll"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_8" Component_="System.Windows.Interactivity.resources.dll_8" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-Hans\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_9"/>
+    <ROW File="System.Windows.Interactivity.resources.dll_9" Component_="System.Windows.Interactivity.resources.dll_9" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-Hant\System.Windows.Interactivity.resources.dll" SelfReg="false" NextFile="BCO.DataService.resources.dll_3"/>
+    <ROW File="UnityEngine.dll" Component_="UnityEngine.dll" FileName="UNITYE~1.DLL|UnityEngine.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\UnityEngine.dll" SelfReg="false" NextFile="VBM_Control_Library.dll"/>
+    <ROW File="VBM.BCO.exe.config" Component_="Eula.rtf" FileName="VBMBCO~1.CON|VBM.BCO.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\VBM.BCO.exe.config" SelfReg="false" NextFile="SevenZipSharp.dll"/>
+    <ROW File="VBM.BCO.exe_1" Component_="VBM.BCO.exe_1" FileName="VBMBCO~1.EXE|VBM.BCO.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\VBM.BCO.exe" SelfReg="false" NextFile="AutoMapper.dll" DigSign="true"/>
+    <ROW File="VBM.BCO.resources.dll" Component_="VBM.BCO.resources.dll" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de-DE\VBM.BCO.resources.dll" SelfReg="false" NextFile="System.Windows.Interactivity.resources.dll_1"/>
+    <ROW File="VBM.BCO.resources.dll_1" Component_="VBM.BCO.resources.dll_1" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-FR\VBM.BCO.resources.dll" SelfReg="false" NextFile="ValidationFail.png"/>
+    <ROW File="VBM.BCO.resources.dll_2" Component_="VBM.BCO.resources.dll_2" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\de\VBM.BCO.resources.dll" SelfReg="false" NextFile="VBM.BCO.resources.dll"/>
+    <ROW File="VBM.BCO.resources.dll_3" Component_="VBM.BCO.resources.dll_3" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\fr-CA\VBM.BCO.resources.dll" SelfReg="false" NextFile="BCO.DataService.resources.dll_1"/>
+    <ROW File="VBM.BCO.resources.dll_4" Component_="VBM.BCO.resources.dll_4" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\nl\VBM.BCO.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_6"/>
+    <ROW File="VBM.BCO.resources.dll_5" Component_="VBM.BCO.resources.dll_5" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-CN\VBM.BCO.resources.dll" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_8"/>
+    <ROW File="VBM.BCO.resources.dll_6" Component_="VBM.BCO.resources.dll_6" FileName="VBMBCO~1.DLL|VBM.BCO.resources.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zh-TW\VBM.BCO.resources.dll" SelfReg="false"/>
+    <ROW File="VBM_Control_Library.dll" Component_="VBM_Control_Library.dll" FileName="VBM_CO~1.DLL|VBM_Control_Library.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\VBM_Control_Library.dll" SelfReg="false" NextFile="WpfAnimatedGif.dll"/>
+    <ROW File="ValidationFail.png" Component_="ValidationFail.png" FileName="VALIDA~1.PNG|ValidationFail.png" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Images\ValidationFail.png" SelfReg="false" NextFile="Microsoft.SqlServer.Types.resources.dll_3"/>
+    <ROW File="WpfAnimatedGif.dll" Component_="WpfAnimatedGif.dll" FileName="WPFANI~1.DLL|WpfAnimatedGif.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\WpfAnimatedGif.dll" SelfReg="false" NextFile="WpfControls.dll"/>
+    <ROW File="WpfAnimatedGif.xml" Component_="Eula.rtf" FileName="WPFANI~1.XML|WpfAnimatedGif.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\WpfAnimatedGif.xml" SelfReg="false" NextFile="ZintNetLib.dll"/>
+    <ROW File="WpfControls.dll" Component_="WpfControls.dll" FileName="WPFCON~1.DLL|WpfControls.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\WpfControls.dll" SelfReg="false" NextFile="Eula.rtf"/>
+    <ROW File="ZintNetLib.dll" Component_="ZintNetLib.dll" FileName="ZINTNE~1.DLL|ZintNetLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\ZintNetLib.dll" SelfReg="false" NextFile="zxing.dll"/>
+    <ROW File="bco.config" Component_="bco_report_label_list.config" FileName="BCO~1.CON|bco.config" Attributes="1" SourcePath="..\source\Dependencies\bco.config" SelfReg="false" NextFile="C1.WPF.Zip.4.dll"/>
+    <ROW File="bco_report_label_list.config" Component_="bco_report_label_list.config" FileName="BCO_RE~1.CON|bco_report_label_list.config" Attributes="1" SourcePath="..\source\Dependencies\bco_report_label_list.config" SelfReg="false" NextFile="bco.config"/>
+    <ROW File="itextsharp.dll" Component_="itextsharp.dll" FileName="ITEXTS~1.DLL|itextsharp.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\itextsharp.dll" SelfReg="false" NextFile="GenCode128.dll"/>
+    <ROW File="itextsharp.xml" Component_="Eula.rtf" FileName="ITEXTS~1.XML|itextsharp.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\itextsharp.xml" SelfReg="false" NextFile="Microsoft.AspNet.SignalR.Client.xml"/>
+    <ROW File="z.dll" Component_="z.dll" FileName="7z.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Libs\7z.dll" SelfReg="false" NextFile="z64.dll"/>
+    <ROW File="z64.dll" Component_="z64.dll" FileName="7z64.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\Libs\7z64.dll" SelfReg="false" NextFile="BCO.DsMulReportModule.dll"/>
+    <ROW File="zxing.dll" Component_="zxing.dll" FileName="zxing.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zxing.dll" SelfReg="false" NextFile="zxing.presentation.dll"/>
+    <ROW File="zxing.presentation.dll" Component_="zxing.presentation.dll" FileName="ZXINGP~1.DLL|zxing.presentation.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zxing.presentation.dll" SelfReg="false" NextFile="zxing.presentation.xml"/>
+    <ROW File="zxing.presentation.xml" Component_="Eula.rtf" FileName="ZXINGP~1.XML|zxing.presentation.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zxing.presentation.xml" SelfReg="false" NextFile="zxing.xml"/>
+    <ROW File="zxing.xml" Component_="Eula.rtf" FileName="zxing.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\Debug\zxing.xml" SelfReg="false" NextFile="bco_report_label_list.config"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="[|ProductName]_[|ProductVersion]_x64" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\LicenseAgreementDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="MY_FOLDER" Signature_="AppSearchSign"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="20" Y="60" Width="330" Height="120" Attributes="7" Text="..\End_User_Software_License_Terms_and_Conditions_for_VBM_series_Flex_and_DS.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText_2" MsiKey="LicenseAgreementDlg#AgreementText"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="DoAction" Argument="AI_InstallModeCheck" Condition="AI_MAINT" Ordering="100" MsiKey="CustomizeDlg#Next#DoAction#AI_InstallModeCheck#AI_MAINT"/>
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_SHOW_LOG" Condition="(MsiLogFileLocation AND AI_LOG_CHECKBOX)" Ordering="101" MsiKey="FatalError#Finish#DoAction#AI_SHOW_LOG#(MsiLogFileLocation AND AI_LOG_CHECKBOX)"/>
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+    <ROW Directory_="cs_Dir" Component_="cs" ManualDelete="false"/>
+    <ROW Directory_="da_Dir" Component_="da" ManualDelete="false"/>
+    <ROW Directory_="el_Dir" Component_="el" ManualDelete="false"/>
+    <ROW Directory_="fi_Dir" Component_="fi" ManualDelete="false"/>
+    <ROW Directory_="he_Dir" Component_="he" ManualDelete="false"/>
+    <ROW Directory_="no_Dir" Component_="no" ManualDelete="false"/>
+    <ROW Directory_="pl_Dir" Component_="pl" ManualDelete="false"/>
+    <ROW Directory_="ro_Dir" Component_="ro" ManualDelete="false"/>
+    <ROW Directory_="sk_Dir" Component_="sk" ManualDelete="false"/>
+    <ROW Directory_="sv_Dir" Component_="sv" ManualDelete="false"/>
+    <ROW Directory_="tr_Dir" Component_="tr" ManualDelete="false"/>
+    <ROW Directory_="zh_Dir" Component_="zh" ManualDelete="false"/>
+    <ROW Directory_="zhCHS_Dir" Component_="zhCHS" ManualDelete="false"/>
+    <ROW Directory_="zhCHT_Dir" Component_="zhCHT" ManualDelete="false"/>
+    <ROW Directory_="ar_Dir" Component_="ar" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDrLocatorComponent">
+    <ROW Signature_="AppSearchSign" Path="[LocalAppDataFolder]" Depth="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="bcoicon_1.exe" SourcePath="..\bcoicon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DetectSoftware" Sequence="103"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="201"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_DetectSoftware" Sequence="103"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="( Version9X OR VersionNT64 )" Description="[ProductName] cannot be installed on [WindowsTypeNTDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="VBM.BCO" Directory_="SHORTCUTDIR" Name="BLISTE~2|Blister Check Out" Component_="VBM.BCO.exe_1" Target="[#VBM.BCO.exe_1]" Hotkey="0" Icon_="bcoicon_1.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="VBM.BCO_1" Directory_="DesktopFolder" Name="BLISTE~2|Blister Check Out" Component_="VBM.BCO.exe_1" Target="[#VBM.BCO.exe_1]" Hotkey="0" Icon_="bcoicon_1.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="MicrosoftReportVie" DisplayName="Microsoft Report Viewer 2015 Runtime" VersionMin="12.0.2402.15" SetupFileUrl="..\prerequisites\ReportViewer.msi" Location="0" ExactSize="0" Operator="1" Options="y" TargetName="ReportViewer.msi"/>
+    <ROW PrereqKey="MicrosoftSystemCLR" DisplayName="Microsoft System CLR Types for SQL Server 2014" VersionMin="12.0.2402.11" SetupFileUrl="..\prerequisites\SQLSysClrTypes(x64).msi" Location="0" ExactSize="0" Operator="1" Options="y" TargetName="SQLSysClrTypes(x64).msi"/>
+    <ATTRIBUTE name="PrereqsOrder" value="MicrosoftReportVie MicrosoftSystemCLR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="UpgradeCode" Prereq="MicrosoftReportVie" SearchType="4" SearchString="{01DC360F-E770-4E85-8A6D-F830AF364372}" VerMin="12.0.2402.15" Order="1" Property="PreReqSearch"/>
+    <ROW SearchKey="UpgradeCode_1" Prereq="MicrosoftSystemCLR" SearchType="4" SearchString="{34CE963B-6DCD-437E-B75C-CF71A8E2FE77}" VerMin="12.0.2402.11" Order="1" Property="PreReqSearch_1"/>
+  </COMPONENT>
+</DOCUMENT>

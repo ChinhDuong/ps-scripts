@@ -343,18 +343,18 @@ function Set-Version {
   param(
     [string]$filePath
   )
-  Write-Host "---------Begin SetVersion----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin SetVersion----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "filePath:"
-  Write-Host ($filePath)
+  Write-Output "filePath:"
+  Write-Output ($filePath)
 
   Remove-ReadOnlyInFile $filePath
   [string]$fileContent = Get-Content $filePath
   #get current version
   [string]$currentVersionText = [regex]::match($fileContent,'(?<=\[assembly: AssemblyVersion\(")\d+\.\d+\.\d+\.?\d*(?="\))').Groups[0].Value
-  Write-Host "Curent Version $($currentVersionText)"
+  Write-Output "Curent Version $($currentVersionText)"
 
   if (![string]::IsNullOrEmpty($currentVersionText)) {
     $currentVersion = [version]$currentVersionText
@@ -364,9 +364,9 @@ function Set-Version {
     (Get-Content $filePath) |
     ForEach-Object { $_ -replace $currentVersionText,$newVersion.ToString() } |
     Out-File $filePath
-    Write-Host "End Setting Version $($filePath)"
+    Write-Output "End Setting Version $($filePath)"
   }
-  Write-Host "---------End SetVersion----------------------------------- "
+  Write-Output "---------End SetVersion----------------------------------- "
 }
 
 function Remove-ItemIfExist {
@@ -396,34 +396,34 @@ function New-AipWithNewVersion {
     [ValidateNotNullOrEmpty()]
     $bcoFile
   )
-  Write-Host "---------Begin CreateAipWithNewVersion----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin CreateAipWithNewVersion----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "version:"
-  Write-Host ($version)
+  Write-Output "version:"
+  Write-Output ($version)
 
-  Write-Host "aipFolder"
-  Write-Host ($aipFolder)
+  Write-Output "aipFolder"
+  Write-Output ($aipFolder)
 
-  Write-Host "aipFileName:"
-  Write-Host ($aipFileName)
+  Write-Output "aipFileName:"
+  Write-Output ($aipFileName)
 
-  Write-Host "bcoFile:"
-  Write-Host ($bcoFile)
+  Write-Output "bcoFile:"
+  Write-Output ($bcoFile)
 
   if (![string]::IsNullOrEmpty($aipFileName)) {
     # get latest file
     $aipFile = Get-ChildItem "$($aipFolder)\$($aipFileName)*.aip" | Sort { $_.LastWriteTime } | Select-Object -Last 1
-    Write-Host "latest file:"
-    Write-Host ($aipFile)
+    Write-Output "latest file:"
+    Write-Output ($aipFile)
     if (![string]::IsNullOrEmpty($aipFile)) {
-      Write-Host "Latest aipFile:"
-      Write-Host ($aipFile)
+      Write-Output "Latest aipFile:"
+      Write-Output ($aipFile)
       $aipFileNew = ""
       $type = Get-ExecutableType -Path $bcoFile
-      Write-Host "type:"
-      Write-Host ($type)
+      Write-Output "type:"
+      Write-Output ($type)
       if ($type -eq "32-bit")
       {
         $aipFileNew = "$($aipFolder)\$($aipFileName)_$($version)_x86.aip"
@@ -436,17 +436,17 @@ function New-AipWithNewVersion {
       }
       $newFileName = [System.IO.Path]::GetFileName($aipFileNew)
 	  $oldFileName = [System.IO.Path]::GetFileName($aipFile)
-	  Write-Host "newFileName:"
-      Write-Host ($newFileName)	  
+	  Write-Output "newFileName:"
+      Write-Output ($newFileName)	  
 	  
-	  Write-Host "oldFileName:"
-      Write-Host ($oldFileName)
+	  Write-Output "oldFileName:"
+      Write-Output ($oldFileName)
       if (![string]::IsNullOrEmpty($aipFileNew) -and $newFileName -ne $oldFileName) {
         Remove-ItemIfExist $aipFileNew
         Copy-Item $aipFile $aipFileNew -Force
       }
     }
-    Write-Host "End CreateAipWithNewVersion $($aipFileNew)"
+    Write-Output "End CreateAipWithNewVersion $($aipFileNew)"
     return $aipFileNew
   }
 }
@@ -463,18 +463,18 @@ function Set-VersionAndBuildAip {
     [ValidateNotNullOrEmpty()]
     $version
   )
-  Write-Host "---------Begin SetVersionAndBuildAip----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin SetVersionAndBuildAip----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "aicmd:"
-  Write-Host ($aicmd)
+  Write-Output "aicmd:"
+  Write-Output ($aicmd)
 
-  Write-Host "aipFile:"
-  Write-Host ($aipFile)
+  Write-Output "aipFile:"
+  Write-Output ($aipFile)
 
-  Write-Host "version:"
-  Write-Host ($version)
+  Write-Output "version:"
+  Write-Output ($version)
 
   $setVersionCmd = "$($aicmd) /edit $($aipFile) /SetVersion $($version) -noprodcode"
   $buildCmd = "$($aicmd) /build $($aipFile) "
@@ -488,10 +488,78 @@ function Set-VersionAndBuildAip {
   {
     exit 1
   }
-  Write-Host "---------End SetVersionAndBuildAip----------------------------------- "
+  Write-Output "---------End SetVersionAndBuildAip----------------------------------- "
 
 }
 
+function Test-FileAdded{
+	param(
+	[Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    $apiFilePath,
+	[Parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    $fileAdded
+  )
+  Write-Output "----------Begin Test-FileAdded ----------------" 
+  $location = Get-Location
+	#$Path = "test-data\Blister_Check_Outs_1.7.3.1_x64.aip"
+	$xPath = "//COMPONENT[@cid='caphyon.advinst.msicomp.MsiFilesComponent']/ROW"
+	$apiFile = Get-Item $apiFilePath
+  $sourceFileInAip = Select-Xml -Path $apiFilePath -XPath $xPath | Select-Object -ExpandProperty Node #| Select-Object SourcePath
+  $result = $true
+  $fileAddedInfo = Get-Item $fileAdded
+  Set-Location $apiFile.Directory
+	foreach($item in $sourceFileInAip)
+	{    
+    try {
+      $fileInAip = Get-Item $item.SourcePath
+    }
+    catch {
+      Write-Output Get-Location     
+      Write-Output "File $ittem.SourcePath is not exist"
+      continue
+    }
+		
+		if ($fileInAip.FullName -eq $fileAddedInfo.FullName){
+      $result = $false
+      break
+		}
+  }
+  Set-Location $location
+  Write-Output "----------End Test-FileAdded ----------------" 
+	return $result;
+}
+
+function Get-FilesDirsNotAdded($files, $dirs, $aipFile, $fileExclude){
+  $files_dirs_added = @()
+
+  foreach($f in $files){
+    if (Test-FileAdded $aipFile.FullName $f.FullName){
+      $item = @{}
+      $item.path = $f.FullName
+      $item.type = "file"
+      $files_dirs_added = $files_dirs_added + $item
+    }
+  }
+  foreach($d in $dirs){
+    $filesInDir = Get-ChildItem -Path "$($d.FullName)\*" -File -Exclude $fileExclude
+    $isAdd = $false
+    foreach($f1 in $filesInDir){
+      if (Test-FileAdded $aipFile.FullName $f1.FullName){
+        $isAdd = $true
+        break
+      }
+    }
+    if ($isAdd){
+      $item = @{}
+      $item.path = $d.FullName
+      $item.type = "dir"
+      $files_dirs_added = $files_dirs_added + $item
+    }    
+  }
+  return $files_dirs_added
+}
 function Add-FileAndFolderToAip {
   param(
     [Parameter(Mandatory = $true)]
@@ -510,38 +578,56 @@ function Add-FileAndFolderToAip {
     $fileExclude = @( "*.pdb","bco_log")
   )
 
-  Write-Host "---------Begin AddFileAndFolderToAip----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin AddFileAndFolderToAip----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "aicmd:"
-  Write-Host ($aicmd)
+  Write-Output "aicmd:"
+  Write-Output ($aicmd)
 
-  Write-Host "appFolder:"
-  Write-Host ($appFolder)
+  Write-Output "appFolder:"
+  Write-Output ($appFolder)
 
-  Write-Host "apiFilePath:"
-  Write-Host ($apiFilePath)
+  Write-Output "apiFilePath:"
+  Write-Output ($apiFilePath)
 
-  $directories = Get-ChildItem -Path $appFolder -Directory | Where-Object { $folderExclude -notcontains $_.Name }
-  #$directories = Get-ChildItem -Path $appFolder -Directory -Exclude $folderExclude
+  $directories = Get-ChildItem -Path $appFolder -Directory | Where-Object { $folderExclude -notcontains $_.Name }  
   $files = Get-ChildItem -Path "$($appFolder)\*" -File -Exclude $fileExclude
-
-  Write-Host "Add files ....."
-  foreach ($f in $files) {
-    $addFile = """$($aicmd)"" /edit ""$($pwd)\$($apiFilePath)"" /AddFile APPDIR ""$($f.FullName)"" "
-    Write-Host $f.FullName
-    & $aicmd /edit "$apiFilePath" /AddFile APPDIR $f.FullName
+    
+  
+  $fileAip = Get-Item $apiFilePath
+  $files_dirs_added = Get-FilesDirsNotAdded $files $directories $fileAip $fileExclude
+  foreach ($item in $files_dirs_added){
+    $path = $item.path
+    Write-Output $path
+    if($item.type -eq "file"){      
+      Write-Output "Add file: $path"
+      & $aicmd /edit "$apiFilePath" /AddFile APPDIR $path
+    }
+    elseif($item.type -eq "dir"){
+      Write-Output "Add folder: $path"
+      $dir = Get-Item $path
+      $dir_name = $dir.Name
+      & $aicmd /edit "$apiFilePath" /DelFolder APPDIR\$dir_name
+      & $aicmd /edit "$apiFilePath" /AddFolder APPDIR $path
+    }
   }
-  Write-Host "Add folders ....."
-  foreach ($d in $directories) {
-    Write-Host $d.FullName
-    $dir_name = $d.Name
-    $dir_fullName = $d.FullName
-    & $aicmd /edit "$apiFilePath" /DelFolder APPDIR\$dir_name
-    & $aicmd /edit "$apiFilePath" /AddFolder APPDIR $dir_fullName
-  }
-  Write-Host "---------End AddFileAndFolderToAip----------------------------------- "
+  # foreach ($f in $files) {
+  #   if (Test-FileAdded $fileAip.FullName $f.FullName){
+  #     #$addFile = """$($aicmd)"" /edit ""$($fileAip.FullName)"" /AddFile APPDIR ""$($f.FullName)"" "
+  #     Write-Output $f.FullName
+  #     & $aicmd /edit "$apiFilePath" /AddFile APPDIR $f.FullName
+  #   }    
+  # }
+  # Write-Output "Add folders ....."
+  # foreach ($d in $directories) {
+  #   Write-Output $d.FullName
+  #   $dir_name = $d.Name
+  #   $dir_fullName = $d.FullName
+  #   & $aicmd /edit "$apiFilePath" /DelFolder APPDIR\$dir_name
+  #   & $aicmd /edit "$apiFilePath" /AddFolder APPDIR $dir_fullName
+  # }
+  Write-Output "---------End AddFileAndFolderToAip----------------------------------- "
 }
 
 function Install-Build {
@@ -565,65 +651,65 @@ function Install-Build {
     [ValidateNotNullOrEmpty()]
     $filePackage
   )
-  Write-Host "---------Begin DeployBuild----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin DeployBuild----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "pscmd:"
-  Write-Host ($pscmd)
+  Write-Output "pscmd:"
+  Write-Output ($pscmd)
 
-  Write-Host "remotePcName:"
-  Write-Host ($remotePcName)
+  Write-Output "remotePcName:"
+  Write-Output ($remotePcName)
 
-  Write-Host "userName:"
-  Write-Host ($userName)
+  Write-Output "userName:"
+  Write-Output ($userName)
 
-  Write-Host "deployScript:"
-  Write-Host ($deployScript)
+  Write-Output "deployScript:"
+  Write-Output ($deployScript)
 
-  Write-Host "filePackage:"
-  Write-Host ($filePackage)
+  Write-Output "filePackage:"
+  Write-Output ($filePackage)
   $pattern = '(?<=FILE_PACKAGE=)[A-Za-z0-9\\\._]*\.(?:msi|exe)'
   Replace-TextInFile $deployScript $deployScript $pattern $filePackage
 
   & $pscmd \\$remotePcName -u $userName -p $password -c $deployScript
 
-  Write-Host "---------End DeployBuild----------------------------------- "
+  Write-Output "---------End DeployBuild----------------------------------- "
 }
 
 function Replace-TextInFile {
   param(
     $filePath,$output,$pattern,$newValue
   )
-  Write-Host "---------Begin ReplaceTextInFile----------------------------------- "
-  Write-Host "Current Directory:"
-  Write-Host (Get-Location)
+  Write-Output "---------Begin ReplaceTextInFile----------------------------------- "
+  Write-Output "Current Directory:"
+  Write-Output (Get-Location)
 
-  Write-Host "filePath:"
-  Write-Host ($filePath)
+  Write-Output "filePath:"
+  Write-Output ($filePath)
 
-  Write-Host "output:"
-  Write-Host ($output)
+  Write-Output "output:"
+  Write-Output ($output)
 
-  Write-Host "pattern:"
-  Write-Host ($pattern)
+  Write-Output "pattern:"
+  Write-Output ($pattern)
   
-  Write-Host "newValue:"
-  Write-Host ($newValue)
+  Write-Output "newValue:"
+  Write-Output ($newValue)
 
   [string]$fileContent = Get-Content $filePath
-  Write-Host "fileContent:"
-  Write-Host ($fileContent)
+  Write-Output "fileContent:"
+  Write-Output ($fileContent)
   if(!([string]::IsNullOrEmpty($fileContent))){
    
 	  $match = [regex]::match($fileContent,$pattern)
 
-	  Write-Host "match:"
-	  Write-Host ($match)
+	  Write-Output "match:"
+	  Write-Output ($match)
 	  if ($match -ne $null) {
 		$oldValue = $match.Groups[0].Value
-		Write-Host "oldValue:"
-		Write-Host ($oldValue)
+		Write-Output "oldValue:"
+		Write-Output ($oldValue)
 		#(Get-Content $filePath) |
 		#ForEach-Object { $_ -replace $oldValue,$newValue } |
 		#Out-File $outPut
@@ -989,7 +1075,7 @@ function Invoke-Cred
     if ([string]::IsNullOrEmpty($User) -or
       [string]::IsNullOrEmpty($Pass))
     {
-      Write-Host "You must supply a user name and password (target URI is optional)."
+      Write-Output "You must supply a user name and password (target URI is optional)."
       return
     }
     # may be [Int32] or [Management.Automation.ErrorRecord]
@@ -999,7 +1085,7 @@ function Invoke-Cred
       [object]$Cred = Read-Creds $Target $CredType
       if ($null -eq $Cred)
       {
-        Write-Host "Credentials for '$Target', '$User' was not found."
+        Write-Output "Credentials for '$Target', '$User' was not found."
         return
       }
       if ($Cred -is [Management.Automation.ErrorRecord])
@@ -1013,7 +1099,7 @@ Successfully wrote or updated credentials as:
   Updated   : $([String]::Format("{0:yyyy-MM-dd HH:mm:ss}", $Cred.LastWritten.ToUniversalTime())) UTC
   Comment   : $($Cred.Comment)
 "@
-      Write-Host $CredStr
+      Write-Output $CredStr
       return
     }
     # will be a [Management.Automation.ErrorRecord]
@@ -1026,14 +1112,14 @@ Successfully wrote or updated credentials as:
   {
     if (-not $Target)
     {
-      Write-Host "You must supply a target URI."
+      Write-Output "You must supply a target URI."
       return
     }
     # may be [Int32] or [Management.Automation.ErrorRecord]
     [object]$Results = Del-Creds $Target $CredType
     if (0 -eq $Results)
     {
-      Write-Host "Successfully deleted credentials for '$Target'"
+      Write-Output "Successfully deleted credentials for '$Target'"
       return
     }
     # will be a [Management.Automation.ErrorRecord]
@@ -1046,14 +1132,14 @@ Successfully wrote or updated credentials as:
   {
     if (-not $Target)
     {
-      Write-Host "You must supply a target URI."
+      Write-Output "You must supply a target URI."
       return
     }
     # may be [PsUtils.CredMan+Credential] or [Management.Automation.ErrorRecord]
     [object]$Cred = Read-Creds $Target $CredType
     if ($null -eq $Cred)
     {
-      Write-Host "Credential for '$Target' as '$CredType' type was not found."
+      Write-Output "Credential for '$Target' as '$CredType' type was not found."
       return
     }
     if ($Cred -is [Management.Automation.ErrorRecord])
@@ -1067,7 +1153,7 @@ Found credentials as:
   Updated   : $([String]::Format("{0:yyyy-MM-dd HH:mm:ss}", $Cred.LastWritten.ToUniversalTime())) UTC
   Comment   : $($Cred.Comment)
 "@
-    Write-Host $CredStr
+    Write-Output $CredStr
     return $Cred
   }
   #endregion
@@ -1079,7 +1165,7 @@ Found credentials as:
     [object]$Creds = Enum-Creds
     if ($Creds -split [array] -and 0 -eq $Creds.Length)
     {
-      Write-Host "No Credentials found for $($Env:UserName)"
+      Write-Output "No Credentials found for $($Env:UserName)"
       return
     }
     if ($Creds -is [Management.Automation.ErrorRecord])
@@ -1108,7 +1194,7 @@ Storage   : $($Cred.Persist)
 Type      : $($Cred.Type)
 "@
       }
-      Write-Host $CredStr
+      Write-Output $CredStr
     }
     return
   }
@@ -1492,30 +1578,30 @@ function Send-Build{
 		[ValidateNotNullOrEmpty()]
 		$bcoInstallerFolder
 	)
-	Write-Host "---------Begin CopyToFolder----------------------------------- "
-	Write-Host "Current Directory:"
-	Write-Host (Get-Location)
+	Write-Output "---------Begin CopyToFolder----------------------------------- "
+	Write-Output "Current Directory:"
+	Write-Output (Get-Location)
 	
-	Write-Host "moduleFolder:"
-	Write-Host ($moduleFolder)
+	Write-Output "moduleFolder:"
+	Write-Output ($moduleFolder)
 
-	Write-Host "aipFileNew:"
-	Write-Host ($aipFileNew)
+	Write-Output "aipFileNew:"
+	Write-Output ($aipFileNew)
 
-	Write-Host "bcoInstallerFolder:"
-	Write-Host ($bcoInstallerFolder)
+	Write-Output "bcoInstallerFolder:"
+	Write-Output ($bcoInstallerFolder)
 
-	Write-Host "appFileExe:"
-	Write-Host ($appFileExe)
+	Write-Output "appFileExe:"
+	Write-Output ($appFileExe)
 		
 	$file = Get-Item $aipFileNew
 	$dir_path = "$($file.Directory)\$($file.BaseName)-SetupFiles"
-	Write-Host "Copy $dir_path to $bcoInstallerFolder"
+	Write-Output "Copy $dir_path to $bcoInstallerFolder"
 	Copy-Item "$dir_path\*" -Destination $bcoInstallerFolder 
 	$fileInstaller = Get-ChildItem $dir_path
 	$fileName = $fileInstaller.Name
 
-	Write-Host "---------End CopyToFolder----------------------------------- "
+	Write-Output "---------End CopyToFolder----------------------------------- "
 	return $fileName
 	
 }
